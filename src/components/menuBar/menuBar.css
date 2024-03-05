@@ -1,0 +1,35 @@
+.menu-bar {
+  height: 100px;
+  width: 98vw;
+  /* background-color: rgb(112, 144, 172); */
+  display: flex;
+  justify-content: space-between;
+}
+.menu-text {
+  font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+  font-size: 0.75em;
+  font-weight: 600;
+  /* line-height: 18px; */
+  color: #0f1b61;
+  /* color: #4053bb; */
+  /* color: #646cff; */
+  /* color: #7f00e0; */
+  /* margin-right: 30px; */
+  /* margin: auto 30px; */
+}
+
+.menu-text-number {
+  font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+  /* font-size: 1em; */
+  font-weight: 600;
+  /* color: #646cff; */
+  color: #7f00e0;
+}
+
+.logo {
+  height: 2em;
+  /* padding: 1.5em; */
+  will-change: filter;
+  transition: filter 300ms;
+  margin: auto 30px;
+}

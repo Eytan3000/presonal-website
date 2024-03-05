@@ -1,0 +1,21 @@
+.code-text {
+  font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+  font-size: 1em;
+  line-height: 18px;
+  /* color: #4a5ab1; */
+  /* color: #4053bb; */
+  /* color: #646cff; */
+  color: #7f00e0;
+}
+
+.cv-button {
+  background-size: 11px;
+  opacity: 0.6;
+  font-weight: 800;
+  font-size: 50px;
+}
+
+.hero {
+  height: 100vh-100px;
+  margin-top: 20%;
+}
