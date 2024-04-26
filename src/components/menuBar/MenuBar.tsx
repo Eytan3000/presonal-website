@@ -4,7 +4,7 @@ export default function MenuBar() {
   return (
     <div className="menu-bar">
       <img className="logo" src={logo} alt="" />
-      <div style={{ display: 'flex', gap: '100px', margin: 'auto 0 ' }}>
+      <div className="menu-links-container">
         <h3 className="menu-text">
           <span className="menu-text-number">01.</span> About
         </h3>

@@ -1,9 +1,9 @@
 .menu-bar {
   height: 100px;
-  width: 98vw;
   /* background-color: rgb(112, 144, 172); */
   display: flex;
   justify-content: space-between;
+  gap: 20px;
 }
 .menu-text {
   font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
@@ -16,6 +16,14 @@
   /* color: #7f00e0; */
   /* margin-right: 30px; */
   /* margin: auto 30px; */
+}
+
+.menu-links-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+  align-items: center;
+  margin-right: 30px;
 }
 
 .menu-text-number {
@@ -32,4 +40,6 @@
   will-change: filter;
   transition: filter 300ms;
   margin: auto 30px;
+  /* flex: 1; */
 }
+
