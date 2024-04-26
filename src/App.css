@@ -67,7 +67,6 @@ hr {
   color: #7f00e0;
 }
 
-
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr; /* Two equal columns */
@@ -76,13 +75,16 @@ hr {
 
 .left-section {
   grid-column: 1 / 2; /* Span from column 1 to column 2 */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center vertically */
 }
 
 .right-section {
   grid-column: 2 / 3; /* Span from column 2 to column 3 */
 }
 
-.hero-secondary-title{
+.hero-secondary-title {
   font-size: 1.5em;
   font-weight: 400;
 }

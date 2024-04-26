@@ -12,7 +12,7 @@ export default function Card({ title }: { title: string }) {
         marginBottom: '1rem',
         width: '100%',
       }}>
-      <h4>{title}</h4>
+      {title}
     </div>
   );
 }
