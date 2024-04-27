@@ -3,7 +3,6 @@ import MenuBar from './components/menuBar/MenuBar';
 import Hero from './components/hero/Hero';
 import AboutMe from './components/aboutMe/AboutMe';
 import ProjectDetails from './components/reusable/projectDetails/ProjectDetails';
-import Card from './components/reusable/Card';
 
 function SectionDivider({
   number,
@@ -62,8 +61,7 @@ function App() {
         <SectionDivider number={2} title={'Things I’ve Built'} mt={9} />
 
         <ProjectDetails title={'Planify'} />
-        <ProjectDetails title={'Planify'} />
-        <ProjectDetails title={'Planify'} />
+        <ProjectDetails title={'Compound interest calculator'} />
 
         <SectionDivider number={3} title={'Contact'} mt={9} />
       </div>

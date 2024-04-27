@@ -118,3 +118,15 @@ button:hover {
 .cursor {
   cursor: pointer;
 }
+
+.flex-wrap{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.border-radius-15{
+  border-radius: 15px;
+}
+.border-radius-20{
+  border-radius: 15px;
+}

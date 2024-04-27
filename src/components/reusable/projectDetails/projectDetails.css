@@ -101,12 +101,21 @@ td {
   border-radius: 15px;
 }
 
+.patient-screen-image {
+  height: 500px;
+  /* width: auto; */
+  border: 0.5px solid #bbbbbb;
+  margin: 0 auto;
+  border-radius: 15px;
+}
+
 .grid-container {
   display: grid;
   /* column-gap: 50px; */
   /* grid-template-columns: auto auto; */
   /* background-color: #2196f3; */
   /* padding: 10px; */
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
 }
 
 .grid-item {
@@ -115,4 +124,17 @@ td {
   padding: 20px;
   /* font-size: 30px; */
   /* text-align: center; */
+}
+
+
+/* ------------------- */
+
+.show-more-container {
+  overflow: hidden;
+  transition: max-height 3s ease-out; /* Adjust the duration and easing as needed */
+  max-height: 0; /* Initially hide the container */
+}
+
+.show-more-container.open {
+  max-height: 1000px; /* Adjust the maximum height as needed */
 }

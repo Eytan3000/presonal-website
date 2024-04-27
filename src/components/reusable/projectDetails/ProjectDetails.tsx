@@ -1,7 +1,8 @@
 import './projectDetails.css';
 import planify from '../../../assets/planify.png';
 import MainDashboardImg from '../../../assets/placeholders/main_dashboard_placeholder.png';
-import { FaGithub, FaLeaf } from 'react-icons/fa';
+import patientScreenImg from '../../../assets/placeholders/patient_screen_placeholder.png';
+import { FaGithub } from 'react-icons/fa';
 import { CiShare1 } from 'react-icons/ci';
 import { LiaAngleDoubleDownSolid } from 'react-icons/lia';
 import { BsCopy } from 'react-icons/bs';
@@ -11,7 +12,8 @@ import { useState } from 'react';
 const projectUrl = 'https://planifyapp.netlify.app/';
 const gitHubUrl = 'https://github.com/Eytan3000/appointment_client';
 const mainDashUrl = 'https://planifyapp.netlify.app/main-calendar';
-
+const patientScreenUrl =
+  'https://planifyapp.netlify.app/client/Um4i1ArauPht0EvywK7Ob4NwsIH2';
 const emailToMainDash = 'eytankrief@gmail.com';
 const passToMainDash = 'Eytan1105!';
 
@@ -105,12 +107,131 @@ function CredentialTable() {
     </div>
   );
 }
+
+function ShowMore() {
+  const handOpenMainDash = () => window.open(mainDashUrl, '_blank');
+
+  return (
+    <>
+      {' '}
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          marginTop: '2rem',
+          marginInline: '5rem',
+          padding: '3rem',
+          border: '0.1px solid #c1c1c1',
+          borderRadius: '17px',
+          // background:'#eceafa'
+        }}>
+        <h3>User Story:</h3>
+        <p style={{ maxWidth: '50%' }}>
+          I’m a massage therapist.
+          <br />I want to send a link to my clients, where they can see the
+          available time slots within my work days and hours.
+          <br /> I then see the new appointment in my dashboard as a calendar
+          event, and we both receive a notification with the appointment
+          details.
+        </p>
+        <h2>Therapist’s Dashboard:</h2>
+
+        <div className="grid-container">
+          <div className="grid-item">
+            <div>
+              <a href={mainDashUrl} target={'_blank'} className="inline-link">
+                Go to Main Dashborad{' '}
+              </a>
+            </div>
+
+            <CredentialTable />
+          </div>
+          <div className="grid-item cursor" onClick={handOpenMainDash}>
+            {' '}
+            <img
+              className="main-dashboard-image img-back-glow"
+              src={MainDashboardImg}
+              alt="main-dashboard-image"
+            />
+          </div>
+        </div>
+
+        <h2>Patient's Scheduling Screen:</h2>
+        <div>
+          <a
+            href={patientScreenUrl}
+            target={'_blank'}
+            // className="inline-link"
+            style={{
+              display: 'inline-block',
+              // marginBottom: '50px',
+              margin: '10px 20px 30px 20px',
+            }}>
+            Go to Patient Screen{' '}
+          </a>
+        </div>
+        <img
+          className="border-radius-20 patient-screen-image"
+          src={patientScreenImg}
+          alt="patient-Screen-Img"
+        />
+
+        <div style={{ marginTop: '40px' }}>
+          <h2>Additional Features Implemented:</h2>
+          <ol>
+            <li>
+              <strong>Responsive Design:</strong>
+              <p>
+                The platform is accessible and functional across various
+                devices, including desktops, tablets, and mobile phones, to
+                accommodate users' preferences and needs.
+              </p>
+            </li>
+            <li>
+              <strong>Authentication:</strong>
+              <p>
+                Implemented a secure Firebase authentication mechanisms to
+                verify users' identities and permissions, and ensuring that only
+                authorized users can access specific API endpoints using a JWT.
+              </p>
+            </li>
+            <li>
+              <strong>TanStack (React) queries:</strong>
+              <p>
+                Streamlined data fetching and management, encompassing error
+                handling and retry logic, alongside optimistic updates and
+                automatic data management.
+              </p>
+            </li>
+            <li>
+              <strong>Notification System:</strong>
+              <p>
+                Integrated a notification system using Twilio to send timely
+                reminders and updates to both therapists and clients about
+                upcoming appointments.
+              </p>
+            </li>
+            <li>
+              <strong>Customization Options:</strong>
+              <p>
+                Provided customization options through the a dashboard for users
+                to personalize their profiles, set working hours, define service
+                offerings, and specify appointment durations or intervals
+                according to their preferences and business requirements.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </>
+  );
+}
 export default function ProjectDetails({ title }: { title: string }) {
-  const [showInfo, setShowInfo] = useState(true);
+  const [showInfo, setShowInfo] = useState(false);
 
   const handleOpenProjectUrl = () => window.open(projectUrl, '_blank');
   const handleGithubClick = () => window.open(gitHubUrl, '_blank');
-  const handOpenMainDash = () => window.open(mainDashUrl, '_blank');
 
   return (
     <>
@@ -123,7 +244,7 @@ export default function ProjectDetails({ title }: { title: string }) {
           marginInline: '5rem',
           //   margin: '2rem 5rem 6rem 5rem',
         }}>
-        <h2 style={{ fontSize: '40px', margin: '0' }}>Planify</h2>
+        <h2 style={{ fontSize: '40px', margin: '0' }}>{title}</h2>
         <p style={{ color: '#7f00e0', marginBottom: '3rem' }}>
           An appointment Scheduling Platform
         </p>
@@ -240,59 +361,7 @@ export default function ProjectDetails({ title }: { title: string }) {
         }}
       /> */}
       {/* SHOW_MORE */}
-      {showInfo && (
-        <>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              marginTop: '2rem',
-              marginInline: '5rem',
-              padding: '3rem',
-              border: '0.1px solid #c1c1c1',
-              borderRadius: '17px',
-              // background:'#eceafa'
-            }}>
-            <h3>User Story:</h3>
-            <p style={{ maxWidth: '50%' }}>
-              I’m a massage therapist.
-              <br />I want to send a link to my clients, where they can see the
-              available time slots within my work days and hours.
-              <br /> I then see the new appointment in my dashboard as a
-              calendar event, and we both receive a notification with the
-              appointment details.
-            </p>
-            <h2>Therapist’s Dashboard:</h2>
-
-
-            <div className="grid-container">
-              <div className="grid-item">
-                <div>
-                  <a
-                    href="https://planifyapp.netlify.app/main-calendar"
-                    target={'_blank'}
-                    className="inline-link">
-                    Go to Main Dashborad{' '}
-                  </a>
-                </div>
-
-                <CredentialTable />
-              </div>
-              <div
-                className="grid-item cursor"
-                onClick={handOpenMainDash}>
-                {' '}
-                <img
-                  className="main-dashboard-image img-back-glow"
-                  src={MainDashboardImg}
-                  alt="main-dashboard-image"
-                />
-              </div>
-            </div>
-          </div>
-        </>
-      )}
+      {showInfo && <ShowMore />}
       <BottomDivider />
     </>
   );
