@@ -40,28 +40,12 @@ function App() {
         <SectionDivider number={1} title={'About me'} mt={32} />
 
         <AboutMe />
-        {/* <SectionDivider number={3} title={'Technologies I Use'} mt={9} /> */}
-
-        {/* <div
-          style={{
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'space-between',
-          }}>
-          <Card title={'JavaScript'} />
-          <Card title={'TypeScript'} />
-          <Card title={'React'} />
-          <Card title={'Redux'} />
-          <Card title={'NodeJS'} />
-          <Card title={'ExpressJS'} />
-          <Card title={'MySQL'} />
-          <Card title={'Github'} />
-        </div> */}
 
         <SectionDivider number={2} title={'Things I’ve Built'} mt={9} />
 
         <ProjectDetails title={'Planify'} />
         <ProjectDetails title={'Compound interest calculator'} />
+        <ProjectDetails title={'Personal Website'} />
 
         <SectionDivider number={3} title={'Contact'} mt={9} />
       </div>
