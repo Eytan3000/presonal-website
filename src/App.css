@@ -64,7 +64,7 @@ hr {
   font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
   font-size: 1em;
   line-height: 18px;
-  color: #7f00e0;
+  color: var(--main-color);
 }
 
 .grid-container {

@@ -15,12 +15,14 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --main-color: #7f00e0;
 }
+
 
 a {
   font-weight: 500;
-  /* color: #646cff; */
-  color: #7f00e0;
+  color: #646cff;
   text-decoration: inherit;
 }
 a:hover {
@@ -111,4 +113,8 @@ button:hover {
   h1 {
     line-height: 1;
   }
+}
+
+.cursor {
+  cursor: pointer;
 }

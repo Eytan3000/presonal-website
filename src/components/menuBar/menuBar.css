@@ -13,7 +13,7 @@
   color: #0f1b61;
   /* color: #4053bb; */
   /* color: #646cff; */
-  /* color: #7f00e0; */
+  /* color: var(--main-color); */
   /* margin-right: 30px; */
   /* margin: auto 30px; */
 }
@@ -31,7 +31,7 @@
   /* font-size: 1em; */
   font-weight: 600;
   /* color: #646cff; */
-  color: #7f00e0;
+  color: var(--main-color);
 }
 
 .logo {
@@ -42,4 +42,3 @@
   margin: auto 30px;
   /* flex: 1; */
 }
-
