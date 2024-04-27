@@ -115,17 +115,19 @@ function ShowMore() {
     <>
       {' '}
       <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          marginTop: '2rem',
-          marginInline: '5rem',
-          padding: '3rem',
-          border: '0.1px solid #c1c1c1',
-          borderRadius: '17px',
-          // background:'#eceafa'
-        }}>
+        // style={{
+        //   display: 'flex',
+        //   flexDirection: 'column',
+        //   justifyContent: 'center',
+        //   marginTop: '2rem',
+        //   marginInline: '5rem',
+        //   padding: '3rem',
+        //   border: '0.1px solid #c1c1c1',
+        //   borderRadius: '17px',
+        //   background:'#eceafa'
+        // }}
+        className='show-more-container'
+        >
         <h3>User Story:</h3>
         <p style={{ maxWidth: '50%' }}>
           I’m a massage therapist.
@@ -227,6 +229,7 @@ function ShowMore() {
     </>
   );
 }
+
 export default function ProjectDetails({ title }: { title: string }) {
   const [showInfo, setShowInfo] = useState(false);
 
@@ -242,7 +245,6 @@ export default function ProjectDetails({ title }: { title: string }) {
           justifyContent: 'center',
           marginTop: '2rem',
           marginInline: '5rem',
-          //   margin: '2rem 5rem 6rem 5rem',
         }}>
         <h2 style={{ fontSize: '40px', margin: '0' }}>{title}</h2>
         <p style={{ color: '#7f00e0', marginBottom: '3rem' }}>
@@ -267,25 +269,6 @@ export default function ProjectDetails({ title }: { title: string }) {
           </div>
         </div>
 
-        {/* <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            marginTop: '1rem',
-          }}>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              gap: '2rem',
-            }}>
-            <FaGithub size={40} />
-
-            <CiShare1 size={40} />
-          </div>
-          <button>Show more</button>
-          <div style={{ width: '112px' }} />
-        </div> */}
         <div
           style={{
             display: 'flex',
@@ -321,45 +304,8 @@ export default function ProjectDetails({ title }: { title: string }) {
             <div style={{ width: '20px' }} />
           </div>
         </div>
-        {/* <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            gap: '2rem',
-          }}>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              gap: '2rem',
-            }}>
-            <FaGithub size={40} />
-
-            <CiShare1 size={40} />
-          </div>
-          <button style={{ margin: '0 auto' }}>Show more</button>
-        </div> */}
       </div>
-      {/* <hr
-        style={{
-          marginTop: '6rem',
-          //   height: '0.1px',
-          border: '0.1px solid #d7d7d7',
-        }}
-      /> */}
-      {/* <div
-        style={{
-          marginTop: '6rem',
-          height: '10px',
-          width: '10px',
-          //   background: 'red',
-          borderRadius: '50%',
-          background: '#272727',
-          //   border: '0.1px solid #d7d7d7',
-          margin: '0 auto',
-        }}
-      /> */}
+
       {/* SHOW_MORE */}
       {showInfo && <ShowMore />}
       <BottomDivider />
