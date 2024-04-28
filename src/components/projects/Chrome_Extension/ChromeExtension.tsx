@@ -7,6 +7,7 @@ import { useState } from 'react';
 import mainImage from '../../../assets/Projects/audioPond/AudioPond.png';
 import chart from '../../../assets/Projects/audioPond/Chrome_Extension_Chart.png';
 import loader from '../../../assets/Projects/audioPond/Loader.png';
+import { openWindow } from '../../../helper_functions/helper_functions';
 
 const gitHubUrl = 'https://github.com/Eytan3000/compound-interest-client';
 
@@ -127,7 +128,7 @@ function ShowMore() {
 export default function ChromeExtension({ title }: { title: string }) {
   const [showInfo, setShowInfo] = useState(false);
 
-  const handleGithubClick = () => window.open(gitHubUrl, '_blank');
+  const handleGithubClick = () => openWindow(gitHubUrl);
 
   return (
     <>

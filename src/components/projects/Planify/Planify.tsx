@@ -10,6 +10,7 @@ import { useState } from 'react';
 import mainImage from '../../../assets/planify.png';
 import MainDashboardImg from '../../../assets/placeholders/main_dashboard_placeholder.png';
 import patientScreenImg from '../../../assets/placeholders/patient_screen_placeholder.png';
+import { openWindow } from '../../../helper_functions/helper_functions';
 
 const projectUrl = 'https://planifyapp.netlify.app/';
 const gitHubUrl = 'https://github.com/Eytan3000/appointment_client';
@@ -123,8 +124,8 @@ function CredentialTable() {
 }
 
 function ShowMore() {
-  const handOpenMainDash = () => window.open(mainDashUrl, '_blank');
-  const handleOpenPatientScreen = () => window.open(patientScreenUrl, '_blank');
+  const handOpenMainDash = () => openWindow(mainDashUrl);
+  const handleOpenPatientScreen = () => openWindow(patientScreenUrl);
 
   return (
     <>
@@ -247,8 +248,8 @@ function ShowMore() {
 export default function Planify({ title }: { title: string }) {
   const [showInfo, setShowInfo] = useState(false);
 
-  const handleOpenProjectUrl = () => window.open(projectUrl, '_blank');
-  const handleGithubClick = () => window.open(gitHubUrl, '_blank');
+  const handleOpenProjectUrl = () => openWindow(projectUrl);
+  const handleGithubClick = () => openWindow(gitHubUrl);
 
   return (
     <>

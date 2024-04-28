@@ -8,6 +8,7 @@ import { useState } from 'react';
 import mainImage from '../../../assets/placeholders/main_compound.png';
 import chartImg from '../../../assets/Projects/compound/chart.png';
 import yahooApi from '../../../assets/Projects/compound/yahoo_finance.png';
+import { openWindow } from '../../../helper_functions/helper_functions';
 
 const projectUrl = 'https://compound-calc.netlify.app/';
 const gitHubUrl = 'https://github.com/Eytan3000/compound-interest-client';
@@ -158,8 +159,8 @@ function ShowMore() {
 export default function Compound({ title }: { title: string }) {
   const [showInfo, setShowInfo] = useState(false);
 
-  const handleOpenProjectUrl = () => window.open(projectUrl, '_blank');
-  const handleGithubClick = () => window.open(gitHubUrl, '_blank');
+  const handleOpenProjectUrl = () => openWindow(projectUrl);
+  const handleGithubClick = () => openWindow(gitHubUrl);
 
   return (
     <>

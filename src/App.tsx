@@ -5,6 +5,7 @@ import AboutMe from './components/aboutMe/AboutMe';
 import Planify from './components/projects/Planify/Planify';
 import Compound from './components/projects/Compound/Compound';
 import ChromeExtension from './components/projects/Chrome_Extension/ChromeExtension';
+import Contact from './components/contact/Contact';
 
 function SectionDivider({
   number,
@@ -61,7 +62,6 @@ function App() {
         <Planify title={'Planify'} />
         <Compound title={'Compound Interest Calculator'} />
         <ChromeExtension title={'Chrome Extension'} />
-        {/* <PersonalWebsite title={'Portfolio'} /> */}
 
         <SectionDivider
           id={'section3-contact'}
@@ -69,6 +69,7 @@ function App() {
           title={'Contact'}
           mt={9}
         />
+        <Contact />
       </div>
     </>
   );
