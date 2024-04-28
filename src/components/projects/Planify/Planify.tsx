@@ -1,4 +1,4 @@
-import './projectDetails.css';
+import './planify.css';
 import planify from '../../../assets/planify.png';
 import MainDashboardImg from '../../../assets/placeholders/main_dashboard_placeholder.png';
 import patientScreenImg from '../../../assets/placeholders/patient_screen_placeholder.png';
@@ -110,24 +110,12 @@ function CredentialTable() {
 
 function ShowMore() {
   const handOpenMainDash = () => window.open(mainDashUrl, '_blank');
+  const handleOpenPatientScreen = () => window.open(patientScreenUrl, '_blank');
 
   return (
     <>
       {' '}
-      <div
-        // style={{
-        //   display: 'flex',
-        //   flexDirection: 'column',
-        //   justifyContent: 'center',
-        //   marginTop: '2rem',
-        //   marginInline: '5rem',
-        //   padding: '3rem',
-        //   border: '0.1px solid #c1c1c1',
-        //   borderRadius: '17px',
-        //   background:'#eceafa'
-        // }}
-        className='show-more-container'
-        >
+      <div className="show-more-container">
         <h3>User Story:</h3>
         <p style={{ maxWidth: '50%' }}>
           I’m a massage therapist.
@@ -137,8 +125,12 @@ function ShowMore() {
           event, and we both receive a notification with the appointment
           details.
         </p>
-        <h2>Therapist’s Dashboard:</h2>
 
+        <h2>Therapist’s Dashboard:</h2>
+        <p>
+          In the main dashboard, the therapist can add, delete, or edit
+          appointments, manage client lists, and update business details.
+        </p>
         <div className="grid-container">
           <div className="grid-item">
             <div>
@@ -160,25 +152,33 @@ function ShowMore() {
         </div>
 
         <h2>Patient's Scheduling Screen:</h2>
-        <div>
-          <a
-            href={patientScreenUrl}
-            target={'_blank'}
-            // className="inline-link"
-            style={{
-              display: 'inline-block',
-              // marginBottom: '50px',
-              margin: '10px 20px 30px 20px',
-            }}>
-            Go to Patient Screen{' '}
-          </a>
-        </div>
+        <p>
+          This screen, accessed via a link shared by the therapist with their
+          clients, allows clients to select a service and schedule an
+          appointment. They can choose from available time slots, taking into
+          account the therapist's working hours and days.
+        </p>
+
+        <a
+          href={patientScreenUrl}
+          target={'_blank'}
+          // className="inline-link"
+          style={{
+            display: 'inline-block',
+            // marginBottom: '50px',
+            margin: '10px 20px 30px 20px',
+          }}>
+          Go to Patient Screen{' '}
+        </a>
+        <div></div>
         <img
-          className="border-radius-20 patient-screen-image"
+          className="border-radius-20 patient-screen-image img-back-glow cursor"
+          onClick={handleOpenPatientScreen}
           src={patientScreenImg}
           alt="patient-Screen-Img"
         />
 
+        {/* LAST SECTION */}
         <div style={{ marginTop: '40px' }}>
           <h2>Additional Features Implemented:</h2>
           <ol>
@@ -230,7 +230,7 @@ function ShowMore() {
   );
 }
 
-export default function ProjectDetails({ title }: { title: string }) {
+export default function Planify({ title }: { title: string }) {
   const [showInfo, setShowInfo] = useState(false);
 
   const handleOpenProjectUrl = () => window.open(projectUrl, '_blank');

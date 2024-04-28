@@ -2,7 +2,8 @@ import './App.css';
 import MenuBar from './components/menuBar/MenuBar';
 import Hero from './components/hero/Hero';
 import AboutMe from './components/aboutMe/AboutMe';
-import ProjectDetails from './components/reusable/projectDetails/ProjectDetails';
+import ProjectDetails from './components/projects/Planify/Planify';
+import Planify from './components/projects/Planify/Planify';
 
 function SectionDivider({
   number,
@@ -43,7 +44,7 @@ function App() {
 
         <SectionDivider number={2} title={'Things I’ve Built'} mt={9} />
 
-        <ProjectDetails title={'Planify'} />
+        <Planify title={'Planify'} />
         <ProjectDetails title={'Compound interest calculator'} />
         <ProjectDetails title={'Personal Website'} />
 
