@@ -1,8 +1,20 @@
 import './hero.css';
 
+import { FaGithub } from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa';
+import { openWindow } from '../../helper_functions/helper_functions';
+
 const meopLink = 'https://mepo.info/';
+const gitHubLink = 'https://github.com/Eytan3000';
+const linkedInLink = 'https://www.linkedin.com/in/eytan-krief/';
 
 export default function Hero() {
+  function handleGithubClick() {
+    openWindow(gitHubLink);
+  }
+  function handleLinkedInClick() {
+    openWindow(linkedInLink);
+  }
   return (
     <div className="hero">
       <p className="code-text">Hi, my name is</p>
@@ -16,7 +28,24 @@ export default function Hero() {
         </a>
         .
       </h2>
-      <button className="cv-button">CV</button>
+      {/* <button className="cv-button">CV</button> */}
+      <div
+        style={{
+          display: 'flex',
+          gap: '30px',
+          marginTop: '30px',
+        }}>
+        <FaGithub
+          className="hero-social-icon"
+          onClick={handleGithubClick}
+          size={40}
+        />
+        <FaLinkedin
+          className="hero-social-icon"
+          onClick={handleLinkedInClick}
+          size={40}
+        />
+      </div>
     </div>
   );
 }

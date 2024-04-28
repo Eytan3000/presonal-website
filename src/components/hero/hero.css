@@ -20,3 +20,12 @@
   margin-top: 20%;
 }
 
+.hero-social-icon {
+  cursor: pointer;
+  /* color: #6b5aed; */
+  color: #4938c4;
+  transition: color 0.2s ease;
+}
+.hero-social-icon:hover {
+  color: var(--main-color);
+}

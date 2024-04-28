@@ -2,21 +2,25 @@ import './App.css';
 import MenuBar from './components/menuBar/MenuBar';
 import Hero from './components/hero/Hero';
 import AboutMe from './components/aboutMe/AboutMe';
-import ProjectDetails from './components/projects/Planify/Planify';
 import Planify from './components/projects/Planify/Planify';
+import Compound from './components/projects/Compound/Compound';
+import ChromeExtension from './components/projects/Chrome_Extension/ChromeExtension';
 
 function SectionDivider({
   number,
   title,
   mt,
+  id,
 }: {
   number: number;
   title: string;
   mt: number;
+  id: string;
 }) {
   return (
     <>
       <div
+        id={id}
         style={{
           marginTop: `${mt}em`,
           display: 'flex',
@@ -38,17 +42,33 @@ function App() {
       <div className="main-div">
         <Hero />
 
-        <SectionDivider number={1} title={'About me'} mt={32} />
+        <SectionDivider
+          id={'section1-about-me'}
+          number={1}
+          title={'About me'}
+          mt={32}
+        />
 
         <AboutMe />
 
-        <SectionDivider number={2} title={'Things I’ve Built'} mt={9} />
+        <SectionDivider
+          id={'section2-projects'}
+          number={2}
+          title={'Things I’ve Built'}
+          mt={9}
+        />
 
         <Planify title={'Planify'} />
-        <ProjectDetails title={'Compound interest calculator'} />
-        <ProjectDetails title={'Personal Website'} />
+        <Compound title={'Compound Interest Calculator'} />
+        <ChromeExtension title={'Chrome Extension'} />
+        {/* <PersonalWebsite title={'Portfolio'} /> */}
 
-        <SectionDivider number={3} title={'Contact'} mt={9} />
+        <SectionDivider
+          id={'section3-contact'}
+          number={3}
+          title={'Contact'}
+          mt={9}
+        />
       </div>
     </>
   );

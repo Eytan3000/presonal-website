@@ -55,7 +55,8 @@ export default function AboutMe() {
         style={{
           width: '100%',
           display: 'flex',
-          justifyContent: 'space-between',
+          // justifyContent: 'space-between',
+          flexWrap: 'wrap',
         }}>
         <Card title={'JavaScript'} />
         <Card title={'TypeScript'} />

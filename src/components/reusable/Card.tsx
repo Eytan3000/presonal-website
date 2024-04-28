@@ -10,7 +10,9 @@ export default function Card({ title }: { title: string }) {
         boxShadow: '0 0 5px rgba(120, 118, 118, 0.2)',
         marginRight: '1rem',
         marginBottom: '1rem',
-        width: '100%',
+        // width: '100%',
+        // flexBasis: 'flex-basis: calc(33.33% - 20px);',
+        fontWeight: 'bold',
       }}>
       {title}
     </div>

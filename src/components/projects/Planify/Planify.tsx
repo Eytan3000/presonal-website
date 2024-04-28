@@ -1,13 +1,15 @@
 import './planify.css';
-import planify from '../../../assets/planify.png';
-import MainDashboardImg from '../../../assets/placeholders/main_dashboard_placeholder.png';
-import patientScreenImg from '../../../assets/placeholders/patient_screen_placeholder.png';
+
 import { FaGithub } from 'react-icons/fa';
 import { CiShare1 } from 'react-icons/ci';
 import { LiaAngleDoubleDownSolid } from 'react-icons/lia';
 import { BsCopy } from 'react-icons/bs';
 import { Tooltip } from '@mui/joy';
 import { useState } from 'react';
+
+import mainImage from '../../../assets/planify.png';
+import MainDashboardImg from '../../../assets/placeholders/main_dashboard_placeholder.png';
+import patientScreenImg from '../../../assets/placeholders/patient_screen_placeholder.png';
 
 const projectUrl = 'https://planifyapp.netlify.app/';
 const gitHubUrl = 'https://github.com/Eytan3000/appointment_client';
@@ -17,22 +19,34 @@ const patientScreenUrl =
 const emailToMainDash = 'eytankrief@gmail.com';
 const passToMainDash = 'Eytan1105!';
 
+const userStory = (
+  <p style={{ maxWidth: '50%' }}>
+    As a <strong> massage therapist </strong>, I want to send a link to my
+    clients, where they can see the available time slots within my work days and
+    hours.
+    <br /> I then see the new appointment in my dashboard as a calendar event,
+    and we both receive a notification with the appointment details.
+  </p>
+);
+
 function Details() {
   return (
     <>
-      <h4>A full-stack web platform for appointment scheduling</h4>
-      <p>
-        * Implemented a user-friendly interface for clients to schedule
-        appointments and an admin panel for managing schedules.
+      <p style={{ display: 'inline-block', marginBlock: '0 20px' }}>
+        Tools and technologies used in this project:
       </p>
-      <p>Technologies used:</p>
-      <ul>
-        <li>React</li>
-        <li>TypeScript</li>
-        <li>Node.js</li>
-        <li>Express</li>
-        <li>MySQL</li>
-      </ul>
+
+      <div className="tech-stack-grid-container">
+        <div className="tech-card-container">React</div>
+        <div className="tech-card-container">TypeScript</div>
+        <div className="tech-card-container">MySQL</div>
+        <div className="tech-card-container">NodeJS</div>
+        <div className="tech-card-container">ExpressJS</div>
+        <div className="tech-card-container">React Queries</div>
+        <div className="tech-card-container">JWT</div>
+        <div className="tech-card-container">Firebase Auth</div>
+        <div className="tech-card-container">Cloud Storage</div>
+      </div>
     </>
   );
 }
@@ -117,15 +131,15 @@ function ShowMore() {
       {' '}
       <div className="show-more-container">
         <h3>User Story:</h3>
-        <p style={{ maxWidth: '50%' }}>
+        {/* <p style={{ maxWidth: '50%' }}>
           I’m a massage therapist.
           <br />I want to send a link to my clients, where they can see the
           available time slots within my work days and hours.
           <br /> I then see the new appointment in my dashboard as a calendar
           event, and we both receive a notification with the appointment
           details.
-        </p>
-
+        </p> */}
+        {userStory}
         <h2>Therapist’s Dashboard:</h2>
         <p>
           In the main dashboard, the therapist can add, delete, or edit
@@ -260,7 +274,7 @@ export default function Planify({ title }: { title: string }) {
             }}>
             <img
               className="project-img"
-              src={planify}
+              src={mainImage}
               alt={title + ' project image'}
             />
           </div>
@@ -281,9 +295,11 @@ export default function Planify({ title }: { title: string }) {
           <div
             className="show-more"
             onClick={() => setShowInfo((prev) => !prev)}>
-            <h3 className="show-more">
+            {/* <h3 className="show-more"> */}
+            <button style={{ marginBottom: '20px' }}>
               {showInfo ? 'Show less' : 'Show more'}
-            </h3>
+              {/* </h3> */}
+            </button>
             <LiaAngleDoubleDownSolid
               className={showInfo ? 'show-less-icon' : 'show-more-icon'}
             />
