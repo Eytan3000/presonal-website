@@ -9,6 +9,7 @@ import mainImage from '../../../assets/placeholders/main_compound.png';
 import chartImg from '../../../assets/Projects/compound/chart.png';
 import yahooApi from '../../../assets/Projects/compound/yahoo_finance.png';
 import { openWindow } from '../../../helper_functions/helper_functions';
+import ShowMoreButton from '../../reusable/ShowMoreButton';
 
 const projectUrl = 'https://compound-calc.netlify.app/';
 const gitHubUrl = 'https://github.com/Eytan3000/compound-interest-client';
@@ -53,7 +54,7 @@ function ShowMore() {
   return (
     <>
       {' '}
-      <div className="show-more-container">
+      <div className="show-more-container animated-component">
         <h3>User Story:</h3>
 
         {/* <p style={{ maxWidth: '50%' }}>{userStory}</p> */}
@@ -208,10 +209,13 @@ export default function Compound({ title }: { title: string }) {
             className="show-more"
             onClick={() => setShowInfo((prev) => !prev)}>
             {/* <h3 className="show-more"> */}
-            <button style={{ marginBottom: '20px' }}>
+            {/* <button style={{ marginBottom: '20px' }}>
               {showInfo ? 'Show less' : 'Show more'}
-              {/* </h3> */}
-            </button>
+            </button> */}
+            <ShowMoreButton
+              idToGlide="compound-show-more"
+              showInfo={showInfo}
+            />
             <LiaAngleDoubleDownSolid
               className={showInfo ? 'show-less-icon' : 'show-more-icon'}
             />
@@ -233,6 +237,8 @@ export default function Compound({ title }: { title: string }) {
           </div>
         </div>
       </div>
+
+      <div id="compound-show-more" />
 
       {/* SHOW_MORE */}
       {showInfo && <ShowMore />}

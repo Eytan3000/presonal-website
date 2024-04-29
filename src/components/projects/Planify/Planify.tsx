@@ -11,6 +11,7 @@ import mainImage from '../../../assets/planify.png';
 import MainDashboardImg from '../../../assets/placeholders/main_dashboard_placeholder.png';
 import patientScreenImg from '../../../assets/placeholders/patient_screen_placeholder.png';
 import { openWindow } from '../../../helper_functions/helper_functions';
+import ShowMoreButton from '../../reusable/ShowMoreButton';
 
 const projectUrl = 'https://planifyapp.netlify.app/';
 const gitHubUrl = 'https://github.com/Eytan3000/appointment_client';
@@ -130,7 +131,7 @@ function ShowMore() {
   return (
     <>
       {' '}
-      <div className="show-more-container">
+      <div className="show-more-container animated-component">
         <h3>User Story:</h3>
         {/* <p style={{ maxWidth: '50%' }}>
           I’m a massage therapist.
@@ -296,15 +297,15 @@ export default function Planify({ title }: { title: string }) {
           <div
             className="show-more"
             onClick={() => setShowInfo((prev) => !prev)}>
-            {/* <h3 className="show-more"> */}
-            <button style={{ marginBottom: '20px' }}>
+            {/* <button style={{ marginBottom: '20px' }}>
               {showInfo ? 'Show less' : 'Show more'}
-              {/* </h3> */}
-            </button>
+            </button> */}
+            <ShowMoreButton idToGlide="planify-show-more" showInfo={showInfo} />
             <LiaAngleDoubleDownSolid
               className={showInfo ? 'show-less-icon' : 'show-more-icon'}
             />
-          </div>
+          </div> 
+          
 
           <div
             style={{
@@ -322,7 +323,7 @@ export default function Planify({ title }: { title: string }) {
           </div>
         </div>
       </div>
-
+      <div id="planify-show-more" />
       {/* SHOW_MORE */}
       {showInfo && <ShowMore />}
       <BottomDivider />

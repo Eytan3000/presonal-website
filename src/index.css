@@ -19,7 +19,6 @@
   --main-color: #7f00e0;
   --secondary-color: #c8e8f2;
   scroll-behavior: smooth;
-
 }
 
 a {
@@ -142,3 +141,20 @@ button:hover {
   border-radius: 50%;
   transition: color 0.2s ease;
 }
+
+.animated-component {
+  animation: fade-in 0.5s ease forwards;
+  /* Define other styles as needed */
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px); /* Optional: slide in from top */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

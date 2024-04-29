@@ -8,6 +8,7 @@ import mainImage from '../../../assets/Projects/audioPond/AudioPond.png';
 import chart from '../../../assets/Projects/audioPond/Chrome_Extension_Chart.png';
 import loader from '../../../assets/Projects/audioPond/Loader.png';
 import { openWindow } from '../../../helper_functions/helper_functions';
+import ShowMoreButton from '../../reusable/ShowMoreButton';
 
 const gitHubUrl = 'https://github.com/Eytan3000/compound-interest-client';
 
@@ -52,7 +53,7 @@ function ShowMore() {
   return (
     <>
       {' '}
-      <div className="show-more-container">
+      <div className="show-more-container animated-component">
         <h3>User Story:</h3>
 
         {/* <p style={{ maxWidth: '50%' }}>{userStory}</p> */}
@@ -171,10 +172,20 @@ export default function ChromeExtension({ title }: { title: string }) {
             className="show-more"
             onClick={() => setShowInfo((prev) => !prev)}>
             {/* <h3 className="show-more"> */}
-            <button style={{ marginBottom: '20px' }}>
-              {showInfo ? 'Show less' : 'Show more'}
-              {/* </h3> */}
-            </button>
+
+            {/* <button style={{ marginBottom: '20px' }}>
+              {showInfo ? (
+                'Show less'
+              ) : (
+                <a
+                  style={{ color: 'var(----main-color' }}
+                  href="#chrom-extension-show-more">
+                  Show more
+                </a>
+              )}
+            </button> */}
+            <ShowMoreButton idToGlide='chrom-extension-show-more' showInfo={showInfo} />
+
             <LiaAngleDoubleDownSolid
               className={showInfo ? 'show-less-icon' : 'show-more-icon'}
             />
@@ -192,6 +203,7 @@ export default function ChromeExtension({ title }: { title: string }) {
           </div>
         </div>
       </div>
+      <div id="chrom-extension-show-more" />
 
       {/* SHOW_MORE */}
       {showInfo && <ShowMore />}
