@@ -28,25 +28,24 @@ function Details() {
         Tools and technologies used in this project:
       </p>
 
-      <div className="tech-stack-grid-container">
+      {/* <div className="tech-stack-grid-container">
         <div className="tech-card-container">React</div>
         <div className="tech-card-container">Redux</div>
         <div className="tech-card-container">TypeScript</div>
         <div className="tech-card-container">Yahoo Finance API</div>
         <div className="tech-card-container">Local storage</div>
+      </div> */}
+
+      <div className="tech-card-container-2 ">
+        <div className="tech-card">React</div>
+        <div className="tech-card">Redux</div>
+        <div className="tech-card">TypeScript</div>
+      </div>
+      <div className="tech-card-container-2 ">
+        <div className="tech-card">Yahoo Finance API</div>
+        <div className="tech-card">Local storage</div>
       </div>
     </>
-  );
-}
-
-function BottomDivider() {
-  return (
-    <div
-      style={{
-        marginTop: '4rem',
-        border: '0.1px solid #d7d7d7',
-      }}
-    />
   );
 }
 
@@ -242,7 +241,7 @@ export default function Compound({ title }: { title: string }) {
 
       {/* SHOW_MORE */}
       {showInfo && <ShowMore />}
-      <BottomDivider />
+      {/* <BottomDivider /> */}
     </>
   );
 }

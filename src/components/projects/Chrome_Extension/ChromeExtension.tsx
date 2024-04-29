@@ -9,6 +9,7 @@ import chart from '../../../assets/Projects/audioPond/Chrome_Extension_Chart.png
 import loader from '../../../assets/Projects/audioPond/Loader.png';
 import { openWindow } from '../../../helper_functions/helper_functions';
 import ShowMoreButton from '../../reusable/ShowMoreButton';
+import BottomDivider from '../../reusable/BottomDivider';
 
 const gitHubUrl = 'https://github.com/Eytan3000/compound-interest-client';
 
@@ -26,28 +27,31 @@ function Details() {
         Tools and technologies used in this project:
       </p>
 
-      <div className="tech-stack-grid-container">
+      {/* <div className="tech-stack-grid-container">
         <div className="tech-card-container">OpenAI API</div>
         <div className="tech-card-container">React</div>
         <div className="tech-card-container">TypeScript</div>
         <div className="tech-card-container">Google Cloud Function</div>
         <div className="tech-card-container">Content Script</div>
         <div className="tech-card-container">Firebase Realtime Database</div>
+      </div> */}
+
+      <div className="tech-card-container-2 ">
+        <div className="tech-card">OpenAI API</div>
+        <div className="tech-card">React</div>
+        <div className="tech-card">TypeScript</div>
+      </div>
+      <div className="tech-card-container-2 ">
+        <div className="tech-card">Google Cloud Function</div>
+        <div className="tech-card">Content Script</div>
+      </div>
+      <div className="tech-card-container-2 ">
+        <div className="tech-card">Firebase Realtime Database</div>
       </div>
     </>
   );
 }
 
-function BottomDivider() {
-  return (
-    <div
-      style={{
-        marginTop: '4rem',
-        border: '0.1px solid #d7d7d7',
-      }}
-    />
-  );
-}
 
 function ShowMore() {
   return (
@@ -184,7 +188,10 @@ export default function ChromeExtension({ title }: { title: string }) {
                 </a>
               )}
             </button> */}
-            <ShowMoreButton idToGlide='chrom-extension-show-more' showInfo={showInfo} />
+            <ShowMoreButton
+              idToGlide="chrom-extension-show-more"
+              showInfo={showInfo}
+            />
 
             <LiaAngleDoubleDownSolid
               className={showInfo ? 'show-less-icon' : 'show-more-icon'}

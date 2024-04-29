@@ -153,11 +153,47 @@ td {
 .tech-card-container {
   display: flex;
   justify-content: center;
-  padding: 1.0rem 1.5rem;
+  padding: 1rem 1.5rem;
   border: 0.5px solid #7f00e0;
   border-radius: 10px;
   box-shadow: 0 0 5px rgba(120, 118, 118, 0.2);
   margin-right: 1rem;
   margin-bottom: 1rem;
   /* font-weight: bold; */
+}
+
+/* ---------------------------------- */
+
+/* .tech-card-container-2 {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.tech-card {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 1.5rem;
+  border: 0.5px solid #7f00e0;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(120, 118, 118, 0.2);
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  white-space: nowrap;
+} */
+/* ---------------------------------- */
+
+/* Small screen size */
+@media only screen and (max-width: 600px) {
+  .grid-container {
+    background-color: aqua;
+  }
+}
+
+/* Medium screen size */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  /* Styles for medium screens */
+}
+
+/* Large screen size */
+@media only screen and (min-width: 1025px) {
+  /* Styles for large screens */
 }

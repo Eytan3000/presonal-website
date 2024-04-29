@@ -12,6 +12,7 @@ import MainDashboardImg from '../../../assets/placeholders/main_dashboard_placeh
 import patientScreenImg from '../../../assets/placeholders/patient_screen_placeholder.png';
 import { openWindow } from '../../../helper_functions/helper_functions';
 import ShowMoreButton from '../../reusable/ShowMoreButton';
+import BottomDivider from '../../reusable/BottomDivider';
 
 const projectUrl = 'https://planifyapp.netlify.app/';
 const gitHubUrl = 'https://github.com/Eytan3000/appointment_client';
@@ -38,29 +39,22 @@ function Details() {
         Tools and technologies used in this project:
       </p>
 
-      <div className="tech-stack-grid-container">
-        <div className="tech-card-container">React</div>
-        <div className="tech-card-container">TypeScript</div>
-        <div className="tech-card-container">MySQL</div>
-        <div className="tech-card-container">NodeJS</div>
-        <div className="tech-card-container">ExpressJS</div>
-        <div className="tech-card-container">React Queries</div>
-        <div className="tech-card-container">JWT</div>
-        <div className="tech-card-container">Firebase Auth</div>
-        <div className="tech-card-container">Cloud Storage</div>
+      <div className="tech-card-container-2 ">
+        <div className="tech-card">React</div>
+        <div className="tech-card">TypeScript</div>
+        <div className="tech-card">MySQL</div>
+      </div>
+      <div className="tech-card-container-2 ">
+        <div className="tech-card">NodeJS</div>
+        <div className="tech-card">ExpressJS</div>
+        <div className="tech-card">React</div>
+      </div>
+      <div className="tech-card-container-2 ">
+        <div className="tech-card">JWT</div>
+        <div className="tech-card">Firebase</div>
+        <div className="tech-card">Cloud Storage</div>
       </div>
     </>
-  );
-}
-
-function BottomDivider() {
-  return (
-    <div
-      style={{
-        marginTop: '4rem',
-        border: '0.1px solid #d7d7d7',
-      }}
-    />
   );
 }
 
@@ -304,8 +298,7 @@ export default function Planify({ title }: { title: string }) {
             <LiaAngleDoubleDownSolid
               className={showInfo ? 'show-less-icon' : 'show-more-icon'}
             />
-          </div> 
-          
+          </div>
 
           <div
             style={{
@@ -323,7 +316,10 @@ export default function Planify({ title }: { title: string }) {
           </div>
         </div>
       </div>
+
+      {/*  animation */}
       <div id="planify-show-more" />
+
       {/* SHOW_MORE */}
       {showInfo && <ShowMore />}
       <BottomDivider />

@@ -19,7 +19,7 @@ export default function Contact() {
       <h1 style={{ fontSize: '40px' }}>Get In Touch</h1>
       <p>I'm looking for new opportunities.</p>
       <button onClick={handleClick} style={{ border: '4px solid' }}>
-        Get in touch
+        Contact
       </button>
       {/* <div style={{ height: '300px' }} /> */}
     </div>

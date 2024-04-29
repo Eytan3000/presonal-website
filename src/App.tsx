@@ -60,8 +60,8 @@ function App() {
         />
 
         <Planify title={'Planify'} />
-        <Compound title={'Compound Interest Calculator'} />
         <ChromeExtension title={'Chrome Extension'} />
+        <Compound title={'Compound Interest Calculator'} />
 
         <SectionDivider
           id={'section3-contact'}
