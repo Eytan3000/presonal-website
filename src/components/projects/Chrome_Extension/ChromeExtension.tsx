@@ -10,8 +10,19 @@ import loader from '../../../assets/Projects/audioPond/Loader.png';
 import { openWindow } from '../../../helper_functions/helper_functions';
 import ShowMoreButton from '../../reusable/ShowMoreButton';
 import BottomDivider from '../../reusable/BottomDivider';
+import { useMobile } from '../../../Contexts/MobileProvider';
+import MobileTechStack from '../../reusable/MobileTechStack';
 
 const gitHubUrl = 'https://github.com/Eytan3000/compound-interest-client';
+
+// const mobileStack = [
+//   'OpenAI API',
+//   'React',
+//   'TypeScript',
+//   'Google Cloud Function',
+//   'Content Script',
+//   'Firebase Realtime Database',
+// ];
 
 const userStory = (
   <p style={{ maxWidth: '50%' }}>
@@ -21,37 +32,90 @@ const userStory = (
 );
 
 function Details() {
+  const { isMobile } = useMobile();
   return (
     <>
-      <p style={{ display: 'inline-block', marginBlock: '0 20px' }}>
+      {/* <p
+        style={{
+          display: 'inline-block',
+          marginBlock: '40px ',
+          // textAlign: 'center',
+        }}>
         Tools and technologies used in this project:
-      </p>
+      </p> */}
 
-      {/* <div className="tech-stack-grid-container">
-        <div className="tech-card-container">OpenAI API</div>
-        <div className="tech-card-container">React</div>
-        <div className="tech-card-container">TypeScript</div>
-        <div className="tech-card-container">Google Cloud Function</div>
-        <div className="tech-card-container">Content Script</div>
-        <div className="tech-card-container">Firebase Realtime Database</div>
-      </div> */}
+      {isMobile ? (
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            marginTop: '2rem',
+            flexWrap: 'wrap',
+            gap: '10px',
+          }}>
+          <div
+            style={{
+              display: 'flex',
+              // justifyContent: 'space-around',
+              // flexWrap: 'wrap',
+              gap: '10px',
+              width: '100%',
+            }}>
+            <div
+              className="chrome-extension-mobile-tech-card"
+              style={{ width: '40%' }}>
+              OpenAI API
+            </div>
+            <div
+              className="chrome-extension-mobile-tech-card"
+              style={{ width: '30%' }}>
+              React
+            </div>
+          </div>
 
-      <div className="tech-card-container-2 ">
-        <div className="tech-card">OpenAI API</div>
-        <div className="tech-card">React</div>
-        <div className="tech-card">TypeScript</div>
-      </div>
-      <div className="tech-card-container-2 ">
-        <div className="tech-card">Google Cloud Function</div>
-        <div className="tech-card">Content Script</div>
-      </div>
-      <div className="tech-card-container-2 ">
-        <div className="tech-card">Firebase Realtime Database</div>
-      </div>
+          <div
+            style={{
+              display: 'flex',
+
+              gap: '10px',
+            }}>
+            <div
+              className="chrome-extension-mobile-tech-card"
+              style={{ width: '25%' }}>
+              TypeScript
+            </div>
+            <div
+              className="chrome-extension-mobile-tech-card"
+              style={{ width: '35%' }}>
+              Content Script
+            </div>
+          </div>
+          <div className="chrome-extension-mobile-tech-card">
+            Google Cloud Function
+          </div>
+          <div className="chrome-extension-mobile-tech-card">
+            Firebase Realtime Database
+          </div>
+        </div>
+      ) : (
+        <>
+          <div className="tech-card-container-2 ">
+            <div className="tech-card">OpenAI API</div>
+            <div className="tech-card">React</div>
+            <div className="tech-card">TypeScript</div>
+          </div>
+          <div className="tech-card-container-2 ">
+            <div className="tech-card">Google Cloud Function</div>
+            <div className="tech-card">Content Script</div>
+          </div>
+          <div className="tech-card-container-2 ">
+            <div className="tech-card">Firebase Realtime Database</div>
+          </div>
+        </>
+      )}
     </>
   );
 }
-
 
 function ShowMore() {
   return (
@@ -131,26 +195,22 @@ function ShowMore() {
 }
 
 export default function ChromeExtension({ title }: { title: string }) {
+  const { isMobile } = useMobile();
   const [showInfo, setShowInfo] = useState(false);
 
   const handleGithubClick = () => openWindow(gitHubUrl);
 
   return (
     <>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          marginTop: '2rem',
-          marginInline: '5rem',
-        }}>
-        <h2 style={{ fontSize: '40px', margin: '0' }}>{title}</h2>
+      <div className="chrome-extension-main-container">
+        <h2 style={{ fontSize: isMobile ? '31px' : '40px', margin: '0' }}>
+          {title}
+        </h2>
         <p style={{ color: '#7f00e0', marginBottom: '3rem' }}>
           An AI sound effects marketplace form filler
         </p>
 
-        <div className="grid-container">
+        <div className="chrome-extension-grid-container">
           <div className="left-section">
             <img
               className="project-img-extension"
@@ -163,31 +223,12 @@ export default function ChromeExtension({ title }: { title: string }) {
           </div>
         </div>
 
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            marginTop: '3rem',
-          }}>
+        <div className="chrome-extension-buttons-container">
           <div style={{ width: '164px' }} />
-          {/* <button>Show more</button> */}
 
           <div
             className="show-more"
             onClick={() => setShowInfo((prev) => !prev)}>
-            {/* <h3 className="show-more"> */}
-
-            {/* <button style={{ marginBottom: '20px' }}>
-              {showInfo ? (
-                'Show less'
-              ) : (
-                <a
-                  style={{ color: 'var(----main-color' }}
-                  href="#chrom-extension-show-more">
-                  Show more
-                </a>
-              )}
-            </button> */}
             <ShowMoreButton
               idToGlide="chrom-extension-show-more"
               showInfo={showInfo}
@@ -206,7 +247,7 @@ export default function ChromeExtension({ title }: { title: string }) {
             }}>
             <FaGithub className="icon" onClick={handleGithubClick} size={40} />
 
-            <div style={{ width: '40px' }} />
+            {!isMobile && <div style={{ width: '40px' }} />}
           </div>
         </div>
       </div>

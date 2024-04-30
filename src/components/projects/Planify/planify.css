@@ -108,7 +108,8 @@ td {
 }
 
 .main-dashboard-image {
-  height: 250px;
+  /* height: 500px; */
+  max-width: 100%;
   border: 0.5px solid #bbbbbb;
   margin: 0 auto;
   border-radius: 15px;
@@ -116,7 +117,7 @@ td {
 
 .patient-screen-image {
   height: 500px;
-  /* width: auto; */
+  max-width: 100%;
   border: 0.5px solid #bbbbbb;
   margin: 0 auto;
   border-radius: 15px;
@@ -184,6 +185,13 @@ td {
   gap: 20px; /* Gap between columns */
 }
 
+.planify-main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-inline: 5rem;
+}
 /* -------------------- */
 /* Small screen size */
 @media only screen and (max-width: 600px) {
@@ -198,8 +206,9 @@ td {
     display: flex;
     flex-direction: column;
   }
-  .patient-screen-image {
-    height: 350px;
+
+  .planify-main-container {
+    margin-inline: 0rem;
   }
 }
 

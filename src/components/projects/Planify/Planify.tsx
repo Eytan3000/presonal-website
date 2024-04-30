@@ -265,13 +265,15 @@ export default function Planify({ title }: { title: string }) {
   return (
     <>
       <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          marginTop: '2rem',
-          marginInline: '5rem',
-        }}>
+      className='planify-main-container'
+        // style={{
+        //   display: 'flex',
+        //   flexDirection: 'column',
+        //   justifyContent: 'center',
+        //   marginTop: '2rem',
+        //   marginInline: '5rem',
+        // }}
+        >
         <h2 style={{ fontSize: '40px', margin: '0' }}>{title}</h2>
         <p style={{ color: '#7f00e0', marginBottom: '3rem' }}>
           An appointment Scheduling Platform
