@@ -6,16 +6,19 @@ import Planify from './components/projects/Planify/Planify';
 import Compound from './components/projects/Compound/Compound';
 import ChromeExtension from './components/projects/Chrome_Extension/ChromeExtension';
 import Contact from './components/contact/Contact';
+import MobileMenuModal from './components/menuBar/MobileMenuModal';
+import { useState } from 'react';
+import { useMobile } from './Contexts/MobileProvider';
 
 function SectionDivider({
   number,
   title,
-  mt,
+  mt = 0,
   id,
 }: {
   number: number;
   title: string;
-  mt: number;
+  mt?: number;
   id: string;
 }) {
   return (
@@ -37,9 +40,18 @@ function SectionDivider({
 }
 
 function App() {
+  const { isMobile } = useMobile();
+  const [isMenuClicked, setIsMenuClicked] = useState(false);
+
   return (
     <>
-      <MenuBar />
+      <MenuBar setIsMenuClicked={setIsMenuClicked} />
+
+      <MobileMenuModal
+        open={isMenuClicked}
+        setIsMenuClicked={setIsMenuClicked}
+      />
+
       <div className="main-div">
         <Hero />
 
@@ -47,7 +59,7 @@ function App() {
           id={'section1-about-me'}
           number={1}
           title={'About me'}
-          mt={32}
+          // mt={isMobile ? 20 : 32}
         />
 
         <AboutMe />
@@ -60,7 +72,9 @@ function App() {
         />
 
         <Planify title={'Planify'} />
+
         <ChromeExtension title={'Chrome Extension'} />
+        {/*
         <Compound title={'Compound Interest Calculator'} />
 
         <SectionDivider
@@ -69,7 +83,7 @@ function App() {
           title={'Contact'}
           mt={9}
         />
-        <Contact />
+        <Contact />*/}
       </div>
     </>
   );

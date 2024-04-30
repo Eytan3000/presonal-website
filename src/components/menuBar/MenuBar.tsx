@@ -1,7 +1,10 @@
+import { SetStateAction } from 'react';
+import { useMobile } from '../../Contexts/MobileProvider';
 import logo from '../../assets/KRIEF_Icon_RGB.png';
 import './menuBar.css';
+import { RxHamburgerMenu } from 'react-icons/rx';
 
-export default function MenuBar() {
+function DesktopMenuBar() {
   return (
     <div className="menu-bar">
       <img className="logo" src={logo} alt="" />
@@ -27,4 +30,35 @@ export default function MenuBar() {
       </div>
     </div>
   );
+}
+
+function MobileMenuBar({
+  setIsMenuClicked,
+}: {
+  setIsMenuClicked: React.Dispatch<SetStateAction<boolean>>;
+}) {
+  return (
+    <div className="menu-bar">
+      <img className="logo" src={logo} alt="" />
+      <div className="menu-links-container">
+        <RxHamburgerMenu
+          onClick={() => setIsMenuClicked((prev) => !prev)}
+          size={35}
+        />
+      </div>
+    </div>
+  );
+}
+export default function MenuBar({
+  setIsMenuClicked,
+}: {
+  setIsMenuClicked: React.Dispatch<SetStateAction<boolean>>;
+}) {
+  const { isMobile } = useMobile();
+
+  if (isMobile) {
+    return <MobileMenuBar setIsMenuClicked={setIsMenuClicked} />;
+  } else {
+    return <DesktopMenuBar />;
+  }
 }

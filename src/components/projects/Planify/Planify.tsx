@@ -5,14 +5,18 @@ import { CiShare1 } from 'react-icons/ci';
 import { LiaAngleDoubleDownSolid } from 'react-icons/lia';
 import { BsCopy } from 'react-icons/bs';
 import { Tooltip } from '@mui/joy';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import mainImage from '../../../assets/planify.png';
 import MainDashboardImg from '../../../assets/placeholders/main_dashboard_placeholder.png';
+import MainDashboardMobileImg from '../../../assets/placeholders/Main_Dashboard_Mobile.png';
 import patientScreenImg from '../../../assets/placeholders/patient_screen_placeholder.png';
+import patientScreenMobileImg from '../../../assets/placeholders/patient_screen.png';
 import { openWindow } from '../../../helper_functions/helper_functions';
 import ShowMoreButton from '../../reusable/ShowMoreButton';
 import BottomDivider from '../../reusable/BottomDivider';
+import { useMobile } from '../../../Contexts/MobileProvider';
+import MobileTechStack from '../../reusable/MobileTechStack';
 
 const projectUrl = 'https://planifyapp.netlify.app/';
 const gitHubUrl = 'https://github.com/Eytan3000/appointment_client';
@@ -22,8 +26,18 @@ const patientScreenUrl =
 const emailToMainDash = 'eytankrief@gmail.com';
 const passToMainDash = 'Eytan1105!';
 
+const mobileStack = [
+  'TypeScript',
+  'MySQL',
+  'NodeJS',
+  'ExpressJS',
+  'React',
+  'JWT',
+  'Firebase',
+  'Cloud Storage',
+];
 const userStory = (
-  <p style={{ maxWidth: '50%' }}>
+  <p className="user-story">
     As a <strong> massage therapist </strong>, I want to send a link to my
     clients, where they can see the available time slots within my work days and
     hours.
@@ -61,6 +75,7 @@ function TechStackGrid() {
 function CredentialTable() {
   const [emailCopyState, setEmailCopyState] = useState('Copy');
   const [passCopyState, setPassCopyState] = useState('Copy');
+
   const handleCopyEmail = (text: string) => {
     navigator.clipboard
       .writeText(text)
@@ -87,16 +102,17 @@ function CredentialTable() {
         console.error('Failed to copy:', error);
       });
   };
+
   return (
     <div className="table-container">
       <p>Credentials:</p>
-      <table>
+      <table className="credentials-table">
         <tr>
           <td>E-mail</td>
           <td>{emailToMainDash}</td>
           <Tooltip title={emailCopyState} variant="plain" placement="right">
             <td
-              className="icon"
+              className="icon copy-icon"
               onClick={() => handleCopyEmail(emailToMainDash)}>
               <BsCopy />
             </td>
@@ -107,7 +123,7 @@ function CredentialTable() {
           <td>{passToMainDash}</td>
           <Tooltip title={passCopyState} variant="plain" placement="right">
             <td
-              className="icon"
+              className="icon copy-icon"
               onClick={() => handleCopyPassword(passToMainDash)}>
               <BsCopy />
             </td>
@@ -119,6 +135,7 @@ function CredentialTable() {
 }
 
 function ShowMore() {
+  const { isMobile } = useMobile();
   const handOpenMainDash = () => openWindow(mainDashUrl);
   const handleOpenPatientScreen = () => openWindow(patientScreenUrl);
 
@@ -133,7 +150,7 @@ function ShowMore() {
           In the main dashboard, the therapist can add, delete, or edit
           appointments, manage client lists, and update business details.
         </p>
-        <div className="grid-container">
+        <div className="main-dash-grid-container">
           <div className="grid-item">
             <div>
               <a href={mainDashUrl} target={'_blank'} className="inline-link">
@@ -146,8 +163,15 @@ function ShowMore() {
           <div className="grid-item cursor" onClick={handOpenMainDash}>
             {' '}
             <img
-              className="main-dashboard-image img-back-glow"
-              src={MainDashboardImg}
+              style={
+                isMobile
+                  ? {
+                      display: 'flex',
+                    }
+                  : {}
+              }
+              className="main-dashboard-image img-back-glow "
+              src={isMobile ? MainDashboardMobileImg : MainDashboardImg}
               alt="main-dashboard-image"
             />
           </div>
@@ -175,7 +199,7 @@ function ShowMore() {
         <img
           className="border-radius-20 patient-screen-image img-back-glow cursor"
           onClick={handleOpenPatientScreen}
-          src={patientScreenImg}
+          src={isMobile ? patientScreenMobileImg : patientScreenImg}
           alt="patient-Screen-Img"
         />
 
@@ -232,23 +256,8 @@ function ShowMore() {
 }
 
 export default function Planify({ title }: { title: string }) {
+  const { isMobile } = useMobile();
   const [showInfo, setShowInfo] = useState(false);
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 800);
-
-  useEffect(() => {
-    // Function to update isSmallScreen state when the window is resized
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 750);
-    };
-
-    // Add event listener for window resize
-    window.addEventListener('resize', handleResize);
-
-    // Clean up event listener
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   const handleOpenProjectUrl = () => openWindow(projectUrl);
   const handleGithubClick = () => openWindow(gitHubUrl);
@@ -284,45 +293,16 @@ export default function Planify({ title }: { title: string }) {
           <div
             style={{ margin: '0 2rem' }}
             className="planify-grid-right-section">
-            <TechStackGrid />
+            {isMobile ? (
+              <MobileTechStack technologies={mobileStack} />
+            ) : (
+              <TechStackGrid />
+            )}
           </div>
         </div>
 
         {/* Buttons */}
-        {/* <div
-        className='projects-buttons'
-          style={{
-            // display: 'flex',
-            // justifyContent: 'space-between',
-            // marginTop: '3rem',
-          }}>
-          <div style={{ width: '164px' }} />
-
-          <div
-            className="show-more"
-            onClick={() => setShowInfo((prev) => !prev)}>
-            <ShowMoreButton idToGlide="planify-show-more" showInfo={showInfo} />
-            <LiaAngleDoubleDownSolid
-              className={showInfo ? 'show-less-icon' : 'show-more-icon'}
-            />
-          </div>
-
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              gap: '2rem',
-            }}>
-            <FaGithub className="icon" onClick={handleGithubClick} size={40} />
-            <CiShare1
-              className="icon"
-              onClick={handleOpenProjectUrl}
-              size={40}
-            />
-            <div style={{ width: '20px' }} />
-          </div>
-        </div> */}
-        {isSmallScreen ? (
+        {isMobile ? (
           <div
             style={{
               display: 'flex',
@@ -360,15 +340,7 @@ export default function Planify({ title }: { title: string }) {
             </div>
           </div>
         ) : (
-          <div
-            className="projects-buttons"
-            style={
-              {
-                // display: 'flex',
-                // justifyContent: 'space-between',
-                // marginTop: '3rem',
-              }
-            }>
+          <div className="projects-buttons">
             <div style={{ width: '164px' }} />
 
             <div

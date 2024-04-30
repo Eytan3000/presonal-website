@@ -19,6 +19,7 @@
   --main-color: #7f00e0;
   --secondary-color: #c8e8f2;
   scroll-behavior: smooth;
+  max-width: 100dvw;
 }
 
 a {
@@ -35,6 +36,7 @@ body {
   /* display: flex; */
   /* min-width: 320px; */
   /* min-height: 100vh; */
+  
   background-color: #f4f9fc;
   color: #0f1b61;
 
@@ -182,11 +184,6 @@ button:hover {
 }
 
 @media only screen and (max-width: 750px) {
-  .projects-buttons {
-    /* flex-direction: column; */
-    /* justify-content: space-between; */
-    /* margin-top: 3rem; */
-  }
 }
 
 /* @media only screen and (min-width: 601px) and (max-width: 1024px) { */

@@ -3,12 +3,14 @@ import './hero.css';
 import { FaGithub } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
 import { openWindow } from '../../helper_functions/helper_functions';
+import { useMobile } from '../../Contexts/MobileProvider';
 
 const meopLink = 'https://mepo.info/';
 const gitHubLink = 'https://github.com/Eytan3000';
 const linkedInLink = 'https://www.linkedin.com/in/eytan-krief/';
 
 export default function Hero() {
+  const { isMobile } = useMobile();
   function handleGithubClick() {
     openWindow(gitHubLink);
   }
@@ -16,7 +18,12 @@ export default function Hero() {
     openWindow(linkedInLink);
   }
   return (
-    <div className="hero">
+    <div
+      className="hero"
+      style={{
+        marginTop: isMobile ? '0' : '',
+        marginBottom: '25%',
+      }}>
       <p className="code-text">Hi, my name is</p>
       <h1>Eytan Krief</h1>
       <h2 className="hero-secondary-title">

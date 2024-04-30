@@ -18,6 +18,11 @@
 .hero {
   height: 100vh-100px;
   margin-top: 20%;
+
+  /* for LapTops */
+  @media (max-height: 1000px) {
+    margin-top: 17vh;
+  }
 }
 
 .hero-social-icon {

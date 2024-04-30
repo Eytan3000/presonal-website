@@ -31,6 +31,10 @@
   cursor: pointer;
   border-radius: 50%;
   transition: color 0.2s ease;
+  min-width: 50px;
+}
+.copy-icon {
+  min-width: 10px;
 }
 td.icon {
   cursor: pointer;
@@ -75,14 +79,17 @@ h3.show-more:hover {
   flex-direction: column;
   justify-content: center;
   margin-top: 2rem;
-  margin-inline: 5rem; /* You can use margin-left and margin-right instead */
-  padding: 3rem;
+
   border: 0.1px solid #c1c1c1;
-  border-radius: 17px;
+
   /* background-color: #f6f5ff; */
   background-color: #f5f6ff;
   /* background-color: #eceafa; */
-  box-shadow: 0 0 10px rgba(120, 118, 118, 0.1); /* Increased spread and opacity */
+  /* box-shadow: 0 0 10px rgba(120, 118, 118, 0.1); Increased spread and opacity */
+
+  padding: 3rem;
+  border-radius: 17px;
+  margin-inline: 5rem;
 }
 
 table {
@@ -102,7 +109,6 @@ td {
 
 .main-dashboard-image {
   height: 250px;
-  /* width: auto; */
   border: 0.5px solid #bbbbbb;
   margin: 0 auto;
   border-radius: 15px;
@@ -136,11 +142,7 @@ td {
 }
 
 .grid-item {
-  /* background-color: rgba(255, 255, 255, 0.8); */
-  /* border: 1px solid rgba(0, 0, 0, 0.8); */
   padding: 20px;
-  /* font-size: 30px; */
-  /* text-align: center; */
 }
 
 .tech-stack-grid-container {
@@ -171,40 +173,59 @@ td {
   margin-bottom: 1rem;
   /* font-weight: bold; */
 }
+.user-story {
+  max-width: 50%;
+}
 
+/* -------------------- */
+.main-dash-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 20px; /* Gap between columns */
+}
+
+/* -------------------- */
 /* Small screen size */
 @media only screen and (max-width: 600px) {
-  .planify-grid-container {
-    background-color: rgba(0, 255, 255, 0.307);
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* max-width: 500px; */
-  }
   .planify-project-img {
     width: 100%;
+    min-width: 300px;
+  }
+  .credentials-table {
+    font-size: 12px;
+  }
+  .main-dash-grid-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .patient-screen-image {
+    height: 350px;
   }
 }
 
+@media only screen and (max-width: 800px) {
+  .show-more-container {
+    padding: 1rem;
+    border-radius: 10px;
+    margin-inline: 0;
+  }
+  .user-story {
+    max-width: 100%;
+  }
+}
 /* Medium screen size */
 /* @media only screen and (min-width: 601px) and (max-width: 1024px) { */
-@media only screen and  (max-width: 1155px) {
+@media only screen and (max-width: 1155px) {
   .planify-grid-container {
-    background-color: rgba(217, 0, 255, 0.109);
-
     flex-direction: column;
     align-items: center;
     gap: 2rem;
   }
-  .planify-project-img {
-    /* width: 100%; */
-  }
   .planify-grid-right-section {
-    max-width: 500px;
+    min-width: 300px;
     text-align: center;
   }
 }
 
-/* Large screen size */
 @media only screen and (min-width: 1025px) {
-  /* Styles for large screens */
 }
