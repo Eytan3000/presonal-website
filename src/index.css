@@ -32,12 +32,13 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  /* place-items: center; */
-  min-width: 320px;
-  min-height: 100vh;
+  /* display: flex; */
+  /* min-width: 320px; */
+  /* min-height: 100vh; */
   background-color: #f4f9fc;
   color: #0f1b61;
+
+  /* place-items: center; */
   /* margin: 0 auto */
 }
 
@@ -158,8 +159,6 @@ button:hover {
   }
 }
 
-
-
 .tech-card-container-2 {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -174,4 +173,24 @@ button:hover {
   margin-right: 1rem;
   margin-bottom: 1rem;
   white-space: nowrap;
+}
+
+.projects-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+@media only screen and (max-width: 750px) {
+  .projects-buttons {
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+    /* margin-top: 3rem; */
+  }
+}
+
+/* @media only screen and (min-width: 601px) and (max-width: 1024px) { */
+@media only screen and (max-width: 1155px) {
+}
+@media only screen and (min-width: 1025px) {
 }

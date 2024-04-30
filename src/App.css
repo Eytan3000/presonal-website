@@ -36,7 +36,7 @@
 } */
 
 #root {
-  width: 100%;
+  /* width: 100%; */
 }
 
 .main-div {
@@ -87,4 +87,25 @@ hr {
 .hero-secondary-title {
   font-size: 1.5em;
   font-weight: 400;
+}
+
+/* Small screen size */
+@media only screen and (max-width: 700px) {
+
+}
+
+/* Medium screen size */
+/* @media only screen and (min-width: 601px) and (max-width: 1024px) { */
+@media only screen and (min-width: 601px) and (max-width: 1155px) {
+  .grid-container {
+    background-color: aqua;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* max-width: 500px; */
+  }
+}
+
+/* Large screen size */
+@media only screen and (min-width: 1025px) {
+  /* Styles for large screens */
 }

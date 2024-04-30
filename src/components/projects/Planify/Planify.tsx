@@ -5,7 +5,7 @@ import { CiShare1 } from 'react-icons/ci';
 import { LiaAngleDoubleDownSolid } from 'react-icons/lia';
 import { BsCopy } from 'react-icons/bs';
 import { Tooltip } from '@mui/joy';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import mainImage from '../../../assets/planify.png';
 import MainDashboardImg from '../../../assets/placeholders/main_dashboard_placeholder.png';
@@ -32,7 +32,7 @@ const userStory = (
   </p>
 );
 
-function Details() {
+function TechStackGrid() {
   return (
     <>
       <p style={{ display: 'inline-block', marginBlock: '0 20px' }}>
@@ -127,14 +127,6 @@ function ShowMore() {
       {' '}
       <div className="show-more-container animated-component">
         <h3>User Story:</h3>
-        {/* <p style={{ maxWidth: '50%' }}>
-          I’m a massage therapist.
-          <br />I want to send a link to my clients, where they can see the
-          available time slots within my work days and hours.
-          <br /> I then see the new appointment in my dashboard as a calendar
-          event, and we both receive a notification with the appointment
-          details.
-        </p> */}
         {userStory}
         <h2>Therapist’s Dashboard:</h2>
         <p>
@@ -172,10 +164,9 @@ function ShowMore() {
         <a
           href={patientScreenUrl}
           target={'_blank'}
-          // className="inline-link"
           style={{
             display: 'inline-block',
-            // marginBottom: '50px',
+
             margin: '10px 20px 30px 20px',
           }}>
           Go to Patient Screen{' '}
@@ -242,6 +233,22 @@ function ShowMore() {
 
 export default function Planify({ title }: { title: string }) {
   const [showInfo, setShowInfo] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 800);
+
+  useEffect(() => {
+    // Function to update isSmallScreen state when the window is resized
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 750);
+    };
+
+    // Add event listener for window resize
+    window.addEventListener('resize', handleResize);
+
+    // Clean up event listener
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const handleOpenProjectUrl = () => openWindow(projectUrl);
   const handleGithubClick = () => openWindow(gitHubUrl);
@@ -261,39 +268,39 @@ export default function Planify({ title }: { title: string }) {
           An appointment Scheduling Platform
         </p>
 
-        <div className="grid-container">
+        <div className="planify-grid-container">
           <div
             onClick={handleOpenProjectUrl}
-            className="left-section"
+            className="planify-grid-left-section "
             style={{
               cursor: 'pointer',
             }}>
             <img
-              className="project-img"
+              className="planify-project-img"
               src={mainImage}
               alt={title + ' project image'}
             />
           </div>
-          <div style={{ margin: '0 2rem' }} className="right-section">
-            <Details />
+          <div
+            style={{ margin: '0 2rem' }}
+            className="planify-grid-right-section">
+            <TechStackGrid />
           </div>
         </div>
 
-        <div
+        {/* Buttons */}
+        {/* <div
+        className='projects-buttons'
           style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            marginTop: '3rem',
+            // display: 'flex',
+            // justifyContent: 'space-between',
+            // marginTop: '3rem',
           }}>
           <div style={{ width: '164px' }} />
-          {/* <button>Show more</button> */}
 
           <div
             className="show-more"
             onClick={() => setShowInfo((prev) => !prev)}>
-            {/* <button style={{ marginBottom: '20px' }}>
-              {showInfo ? 'Show less' : 'Show more'}
-            </button> */}
             <ShowMoreButton idToGlide="planify-show-more" showInfo={showInfo} />
             <LiaAngleDoubleDownSolid
               className={showInfo ? 'show-less-icon' : 'show-more-icon'}
@@ -314,10 +321,91 @@ export default function Planify({ title }: { title: string }) {
             />
             <div style={{ width: '20px' }} />
           </div>
-        </div>
+        </div> */}
+        {isSmallScreen ? (
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              marginTop: '3rem',
+              gap: '2rem',
+            }}>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                gap: '7rem',
+              }}>
+              <FaGithub
+                className="icon"
+                onClick={handleGithubClick}
+                size={40}
+              />
+              <CiShare1
+                className="icon"
+                onClick={handleOpenProjectUrl}
+                size={40}
+              />
+            </div>
+            <div
+              className="show-more"
+              onClick={() => setShowInfo((prev) => !prev)}>
+              <ShowMoreButton
+                idToGlide="planify-show-more"
+                showInfo={showInfo}
+              />
+              <LiaAngleDoubleDownSolid
+                className={showInfo ? 'show-less-icon' : 'show-more-icon'}
+              />
+            </div>
+          </div>
+        ) : (
+          <div
+            className="projects-buttons"
+            style={
+              {
+                // display: 'flex',
+                // justifyContent: 'space-between',
+                // marginTop: '3rem',
+              }
+            }>
+            <div style={{ width: '164px' }} />
+
+            <div
+              className="show-more"
+              onClick={() => setShowInfo((prev) => !prev)}>
+              <ShowMoreButton
+                idToGlide="planify-show-more"
+                showInfo={showInfo}
+              />
+              <LiaAngleDoubleDownSolid
+                className={showInfo ? 'show-less-icon' : 'show-more-icon'}
+              />
+            </div>
+
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                gap: '2rem',
+              }}>
+              <FaGithub
+                className="icon"
+                onClick={handleGithubClick}
+                size={40}
+              />
+              <CiShare1
+                className="icon"
+                onClick={handleOpenProjectUrl}
+                size={40}
+              />
+              <div style={{ width: '20px' }} />
+            </div>
+          </div>
+        )}
       </div>
 
-      {/*  animation */}
+      {/*  Glide from nav bar */}
       <div id="planify-show-more" />
 
       {/* SHOW_MORE */}
