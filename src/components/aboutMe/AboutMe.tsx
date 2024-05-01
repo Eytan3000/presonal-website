@@ -19,7 +19,7 @@ export default function AboutMe() {
               years ago I started learning JavaScript. What started as a
               curiosity-driven journey into coding has evolved into a deep love
               for programming, fueling my passion for innovation and continuous
-              learning.
+              
               <br />
               <b
                 style={{
