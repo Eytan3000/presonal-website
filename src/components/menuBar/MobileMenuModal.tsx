@@ -25,55 +25,34 @@ export default function MobileMenuModal({
       <Sheet
         variant="outlined"
         sx={{
-          //   maxWidth: 500,
           borderRadius: 'md',
           p: 3,
           boxShadow: 'lg',
         }}>
         <ModalClose variant="plain" sx={{ m: 1 }} />
-        {/* <Typography
-          component="h2"
-          id="modal-title"
-          level="h4"
-          textColor="inherit"
-          fontWeight="lg"
-          mb={1}>
-          This is the modal title
-        </Typography>
-        <Typography id="modal-desc" textColor="text.tertiary">
-          Make sure to use <code>aria-labelledby</code> on the modal dialog with
-          an optional <code>aria-describedby</code> attribute.
-        </Typography> */}
 
         <div
           style={{
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-
+            textAlign: 'center',
             marginTop: '3rem',
             gap: '2rem',
             width: '60dvw',
           }}>
-          <a
-            href="#section1-about-me"
-            style={{ paddingLeft: '20%' }}
-            onClick={handleClick}>
-            <span className="menu-text-number">01.</span>
+          <a href="#section1-about-me" onClick={handleClick}>
             <h3
               style={{
                 fontSize: '30px',
                 color: '#0f1b61',
+                marginTop: '0',
               }}>
               About
             </h3>
           </a>
 
-          <a
-            style={{ paddingLeft: '20%' }}
-            href="#section2-projects"
-            onClick={handleClick}>
-            <span className="menu-text-number">02.</span>
+          <a href="#section2-projects" onClick={handleClick}>
             <h3
               style={{
                 fontSize: '30px',
@@ -82,11 +61,7 @@ export default function MobileMenuModal({
               Work
             </h3>
           </a>
-          <a
-            style={{ paddingLeft: '20%' }}
-            href="#section3-contact"
-            onClick={handleClick}>
-            <span className="menu-text-number">03.</span>
+          <a href="#section3-contact" onClick={handleClick}>
             <h3
               style={{
                 fontSize: '30px',
