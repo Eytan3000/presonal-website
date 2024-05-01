@@ -8,10 +8,14 @@ import { Tooltip } from '@mui/joy';
 import { useState } from 'react';
 
 import mainImage from '../../../assets/planify.png';
-import MainDashboardImg from '../../../assets/placeholders/main_dashboard_placeholder.png';
-import MainDashboardMobileImg from '../../../assets/placeholders/Main_Dashboard_Mobile.png';
-import patientScreenImg from '../../../assets/placeholders/patient_screen_placeholder.png';
-import patientScreenMobileImg from '../../../assets/placeholders/patient_screen.png';
+
+import MainDashboardImg from '../../../assets/Projects/planify/planify_screens/User_dashboard_screen_desktop.png';
+import MainDashboardMobileImg from '../../../assets/Projects/planify/planify_screens/User_dashboard_screen_mobile.png';
+
+import patientScreenImg from '../../../assets/Projects/planify/planify_screens/client_schedule_screen_desktop.png';
+
+import patientScreenMobileImg from '../../../assets/Projects/planify/planify_screens/client_schedule_screen_mobile.png';
+
 import { openWindow } from '../../../helper_functions/helper_functions';
 import ShowMoreButton from '../../reusable/ShowMoreButton';
 import BottomDivider from '../../reusable/BottomDivider';
@@ -23,8 +27,9 @@ const gitHubUrl = 'https://github.com/Eytan3000/appointment_client';
 const mainDashUrl = 'https://planifyapp.netlify.app/main-calendar';
 const patientScreenUrl =
   'https://planifyapp.netlify.app/client/Um4i1ArauPht0EvywK7Ob4NwsIH2';
-const emailToMainDash = 'eytankrief@gmail.com';
-const passToMainDash = 'Eytan1105!';
+
+const emailToMainDash = 'Pawsitive_600@gmail.com';
+const passToMainDash = '123456';
 
 const mobileStack = [
   'TypeScript',
@@ -38,9 +43,8 @@ const mobileStack = [
 ];
 const userStory = (
   <p className="user-story">
-    As a <strong> massage therapist </strong>, I want to send a link to my
-    clients, where they can see the available time slots within my work days and
-    hours.
+    As a <strong> Dog Walker </strong>, I want to send a link to my clients,
+    where they can see the available time slots within my work days and hours.
     <br /> I then see the new appointment in my dashboard as a calendar event,
     and we both receive a notification with the appointment details.
   </p>
