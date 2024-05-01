@@ -5,7 +5,7 @@ import { LiaAngleDoubleDownSolid } from 'react-icons/lia';
 import { useState } from 'react';
 
 import mainImage from '../../../assets/Projects/audioPond/AudioPond.png';
-import chart from '../../../assets/Projects/audioPond/Chrome_Extension_Chart.png';
+import chart from '../../../assets/Projects/audioPond/Chrome_extension_diagram.png';
 import loader from '../../../assets/Projects/audioPond/Loader.png';
 import { openWindow } from '../../../helper_functions/helper_functions';
 import ShowMoreButton from '../../reusable/ShowMoreButton';

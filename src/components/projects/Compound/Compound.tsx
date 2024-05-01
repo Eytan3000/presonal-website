@@ -269,7 +269,7 @@ export default function Compound({ title }: { title: string }) {
             className="show-more"
             onClick={() => setShowInfo((prev) => !prev)}>
             <ShowMoreButton
-              idToGlide="chrom-extension-show-more"
+              idToGlide="compound-show-more"
               showInfo={showInfo}
             />
 
@@ -299,8 +299,7 @@ export default function Compound({ title }: { title: string }) {
       <div id="compound-show-more" />
 
       {/* SHOW_MORE */}
-      {/* {showInfo && <ShowMore />} */}
-      <ShowMore />
+      {showInfo && <ShowMore />}
       {/* <BottomDivider /> */}
     </>
   );

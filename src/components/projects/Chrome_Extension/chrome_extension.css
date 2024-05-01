@@ -100,14 +100,15 @@ td {
 }
 
 .chrome-extension-loader-img {
-  height: 50dvw;
+  /* height: 50dvw; */
+  height: min(50dvw, 500px);
   border: 0.5px solid #bbbbbb;
   margin: 0 auto;
-  /* border-radius: 15px; */
+  border-radius: 15px;
 
   /* border radius ajusted to the screen */
-  border-radius: min(5vw, 15px); /* Adjust the maximum border radius */
-  border-radius: max(2vw, 10px); /* Adjust the minimum border radius */
+  /* border-radius: min(5vw, 10px); 
+  border-radius: max(2vw, 10px);  */
 }
 
 .grid-item {
@@ -162,8 +163,6 @@ td {
   .chrome-extension-grid-container {
     display: flex;
     flex-direction: column;
-
-    
   }
   .chrome-extension-buttons-container {
     gap: 3rem;
