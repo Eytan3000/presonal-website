@@ -2,6 +2,8 @@ import Card from '../reusable/Card';
 import './aboutMe.css';
 import { useMobile } from '../../Contexts/MobileProvider';
 
+import portraitImg from '../../assets/about/self_portrait_enhanced.png';
+// import portraitImg from '../../assets/about/self_portrait_enhanced_no_bg.png';
 export default function AboutMe() {
   const { isMobile } = useMobile();
   return (
@@ -36,19 +38,34 @@ export default function AboutMe() {
             </p>
           </div>
 
-          <div className="right-section">
+          <div
+            className="right-section"
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+            }}>
             <div
               style={{
-                margin: '15% auto ',
-                height: '70%',
-                width: '70%',
-                border: '0.5px dashed',
-              }}
-            />
+                marginTop: '20px',
+                border: '0.5px solid #b9b9b9',
+                padding: '10px 10px 6px 10px',
+                borderRadius: '10px',
+              }}>
+              <img
+                className="portrait-img"
+                src={portraitImg}
+                alt="portrait-img"
+              />
+            </div>
           </div>
         </div>
       ) : (
-        <div>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}>
           <p style={{ fontSize: '20px' }}>
             I come from a music and sound design background, and about two years
             ago I started learning JavaScript. What started as a
@@ -71,6 +88,20 @@ export default function AboutMe() {
             learning, deepening my understanding of the technologies within my
             stack, which includes:
           </p>
+          <div
+            style={{
+              marginTop: '20px',
+              border: '0.5px solid #b9b9b9',
+              padding: '10px 10px 6px 10px',
+              borderRadius: '10px',
+            }}>
+            <img
+              className="portrait-img-mobile"
+              style={{}}
+              src={portraitImg}
+              alt="portrait-img"
+            />
+          </div>
         </div>
         // you can add a PHOTO here
       )}

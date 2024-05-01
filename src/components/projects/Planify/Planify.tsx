@@ -107,28 +107,30 @@ function CredentialTable() {
     <div className="table-container">
       <p>Credentials:</p>
       <table className="credentials-table">
-        <tr>
-          <td>E-mail</td>
-          <td>{emailToMainDash}</td>
-          <Tooltip title={emailCopyState} variant="plain" placement="right">
-            <td
-              className="icon copy-icon"
-              onClick={() => handleCopyEmail(emailToMainDash)}>
-              <BsCopy />
-            </td>
-          </Tooltip>
-        </tr>
-        <tr>
-          <td>Password</td>
-          <td>{passToMainDash}</td>
-          <Tooltip title={passCopyState} variant="plain" placement="right">
-            <td
-              className="icon copy-icon"
-              onClick={() => handleCopyPassword(passToMainDash)}>
-              <BsCopy />
-            </td>
-          </Tooltip>
-        </tr>
+        <tbody>
+          <tr>
+            <td>E-mail</td>
+            <td>{emailToMainDash}</td>
+            <Tooltip title={emailCopyState} variant="plain" placement="right">
+              <td
+                className="icon copy-icon"
+                onClick={() => handleCopyEmail(emailToMainDash)}>
+                <BsCopy />
+              </td>
+            </Tooltip>
+          </tr>
+          <tr>
+            <td>Password</td>
+            <td>{passToMainDash}</td>
+            <Tooltip title={passCopyState} variant="plain" placement="right">
+              <td
+                className="icon copy-icon"
+                onClick={() => handleCopyPassword(passToMainDash)}>
+                <BsCopy />
+              </td>
+            </Tooltip>
+          </tr>
+        </tbody>
       </table>
     </div>
   );
@@ -265,7 +267,7 @@ export default function Planify({ title }: { title: string }) {
   return (
     <>
       <div
-      className='planify-main-container'
+        className="planify-main-container"
         // style={{
         //   display: 'flex',
         //   flexDirection: 'column',
@@ -273,7 +275,7 @@ export default function Planify({ title }: { title: string }) {
         //   marginTop: '2rem',
         //   marginInline: '5rem',
         // }}
-        >
+      >
         <h2 style={{ fontSize: '40px', margin: '0' }}>{title}</h2>
         <p style={{ color: '#7f00e0', marginBottom: '3rem' }}>
           An appointment Scheduling Platform

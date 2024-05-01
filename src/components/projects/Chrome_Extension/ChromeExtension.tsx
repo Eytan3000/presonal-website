@@ -34,14 +34,11 @@ function Details() {
   const { isMobile } = useMobile();
   return (
     <>
-      {/* <p
-        style={{
-          display: 'inline-block',
-          marginBlock: '40px ',
-          // textAlign: 'center',
-        }}>
-        Tools and technologies used in this project:
-      </p> */}
+      {!isMobile && (
+        <p style={{ display: 'inline-block', marginBlock: '0 20px' }}>
+          Tools and technologies used in this project:
+        </p>
+      )}
 
       {isMobile ? (
         <div
@@ -166,9 +163,7 @@ function ShowMore() {
           <h2>Additional Features Implemented:</h2>
           <ol>
             <li>
-              <strong>
-                A scraper to retrieve tags from the website:
-              </strong>
+              <strong>A scraper to retrieve tags from the website:</strong>
               <p>
                 A Scraper that sits on a Google Cloud Function, which gathers
                 relevant tags from similar sound effects in the marketplace.

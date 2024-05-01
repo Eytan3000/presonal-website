@@ -12,7 +12,9 @@ export default function MobileTechStack({
         flexWrap: 'wrap',
       }}>
       {technologies.map((techTitle) => (
-        <div className="project-mobile-tech-card">{techTitle}</div>
+        <div key={techTitle} className="project-mobile-tech-card">
+          {techTitle}
+        </div>
       ))}
     </div>
   );

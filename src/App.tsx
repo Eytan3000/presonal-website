@@ -8,7 +8,6 @@ import ChromeExtension from './components/projects/Chrome_Extension/ChromeExtens
 import Contact from './components/contact/Contact';
 import MobileMenuModal from './components/menuBar/MobileMenuModal';
 import { useState } from 'react';
-import { useMobile } from './Contexts/MobileProvider';
 
 function SectionDivider({
   number,
@@ -40,7 +39,6 @@ function SectionDivider({
 }
 
 function App() {
-  const { isMobile } = useMobile();
   const [isMenuClicked, setIsMenuClicked] = useState(false);
 
   return (
@@ -74,7 +72,7 @@ function App() {
         <Planify title={'Planify'} />
 
         <ChromeExtension title={'Chrome Extension'} />
-        {/*
+
         <Compound title={'Compound Interest Calculator'} />
 
         <SectionDivider
@@ -83,7 +81,7 @@ function App() {
           title={'Contact'}
           mt={9}
         />
-        <Contact />*/}
+        <Contact />
       </div>
     </>
   );

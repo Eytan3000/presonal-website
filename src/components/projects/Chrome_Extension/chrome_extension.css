@@ -162,6 +162,8 @@ td {
   .chrome-extension-grid-container {
     display: flex;
     flex-direction: column;
+
+    
   }
   .chrome-extension-buttons-container {
     gap: 3rem;
@@ -175,6 +177,12 @@ td {
 }
 
 @media only screen and (min-width: 601px) and (max-width: 800px) {
+  .chrome-extension-grid-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 80%;
+  }
   .chrome-extension-chart-img {
     height: 200px;
   }

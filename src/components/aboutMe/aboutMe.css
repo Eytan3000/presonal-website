@@ -13,3 +13,16 @@
   padding-right: 20px;
   font-weight: bold;
 }
+
+.portrait-img {
+  height: 400px;
+  width: auto;
+  background: #313132;
+  border-radius: 7px;
+}
+.portrait-img-mobile {
+  max-height: 300px;
+  width: auto;
+  background: #313132;
+  border-radius: 7px;
+}

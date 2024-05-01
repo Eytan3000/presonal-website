@@ -10,41 +10,76 @@ import chartImg from '../../../assets/Projects/compound/chart.png';
 import yahooApi from '../../../assets/Projects/compound/yahoo_finance.png';
 import { openWindow } from '../../../helper_functions/helper_functions';
 import ShowMoreButton from '../../reusable/ShowMoreButton';
+import { useMobile } from '../../../Contexts/MobileProvider';
 
 const projectUrl = 'https://compound-calc.netlify.app/';
 const gitHubUrl = 'https://github.com/Eytan3000/compound-interest-client';
 
 const userStory = (
-  <p style={{ maxWidth: '50%' }}>
+  <p className="user-story">
     As a user, I want to <strong>calculate compound interest </strong>Feasily So
     that I can understand how my investments will grow over timels.
   </p>
 );
 
 function Details() {
+  const { isMobile } = useMobile();
   return (
     <>
-      <p style={{ display: 'inline-block', marginBlock: '0 20px' }}>
-        Tools and technologies used in this project:
-      </p>
+      {!isMobile && (
+        <p style={{ display: 'inline-block', marginBlock: '0 20px' }}>
+          Tools and technologies used in this project:
+        </p>
+      )}
 
-      {/* <div className="tech-stack-grid-container">
-        <div className="tech-card-container">React</div>
-        <div className="tech-card-container">Redux</div>
-        <div className="tech-card-container">TypeScript</div>
-        <div className="tech-card-container">Yahoo Finance API</div>
-        <div className="tech-card-container">Local storage</div>
-      </div> */}
+      {isMobile ? (
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            marginTop: '2rem',
+            flexWrap: 'wrap',
+            gap: '10px',
+          }}>
+          <div
+            style={{
+              display: 'flex',
 
-      <div className="tech-card-container-2 ">
-        <div className="tech-card">React</div>
-        <div className="tech-card">Redux</div>
-        <div className="tech-card">TypeScript</div>
-      </div>
-      <div className="tech-card-container-2 ">
-        <div className="tech-card">Yahoo Finance API</div>
-        <div className="tech-card">Local storage</div>
-      </div>
+              gap: '10px',
+            }}>
+            <div className="chrome-extension-mobile-tech-card">React</div>
+            <div className="chrome-extension-mobile-tech-card">Redux</div>
+          </div>
+
+          <div
+            style={{
+              display: 'flex',
+
+              gap: '10px',
+            }}>
+            <div className="chrome-extension-mobile-tech-card">TypeScript</div>
+            <div className="chrome-extension-mobile-tech-card">
+              Local storage
+            </div>
+          </div>
+
+          <div className="chrome-extension-mobile-tech-card">
+            Yahoo Finance API
+          </div>
+        </div>
+      ) : (
+        <>
+          <div className="tech-card-container-2 ">
+            <div className="tech-card">React</div>
+            <div className="tech-card">Redux</div>
+            <div className="tech-card">TypeScript</div>
+          </div>
+          <div className="tech-card-container-2 ">
+            <div className="tech-card"> Local storage</div>
+            <div className="tech-card">Yahoo Finance API</div>
+          </div>
+        </>
+      )}
     </>
   );
 }
@@ -98,7 +133,7 @@ function ShowMore() {
           the user.
         </p>
         <img
-          className="compound-form-chart-images"
+          className="compound-form-chart-images yahoo-img"
           src={yahooApi}
           alt="compound-form-images"
         />
@@ -157,6 +192,7 @@ function ShowMore() {
 }
 
 export default function Compound({ title }: { title: string }) {
+  const { isMobile } = useMobile();
   const [showInfo, setShowInfo] = useState(false);
 
   const handleOpenProjectUrl = () => openWindow(projectUrl);
@@ -164,20 +200,15 @@ export default function Compound({ title }: { title: string }) {
 
   return (
     <>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          marginTop: '2rem',
-          marginInline: '5rem',
-        }}>
-        <h2 style={{ fontSize: '40px', margin: '0' }}>{title}</h2>
+      <div className="compound-main-container">
+        <h2 style={{ fontSize: isMobile ? '31px' : '40px', margin: '0' }}>
+          {title}
+        </h2>
         <p style={{ color: '#7f00e0', marginBottom: '3rem' }}>
           A visual representation of wealth growing over time
         </p>
 
-        <div className="grid-container">
+        <div className="compound-grid-container ">
           <div
             onClick={handleOpenProjectUrl}
             className="left-section"
@@ -185,7 +216,7 @@ export default function Compound({ title }: { title: string }) {
               cursor: 'pointer',
             }}>
             <img
-              className="project-img"
+              className="compound-project-img"
               src={mainImage}
               alt={title + ' project image'}
             />
@@ -195,22 +226,17 @@ export default function Compound({ title }: { title: string }) {
           </div>
         </div>
 
-        <div
+        {/* <div
           style={{
             display: 'flex',
             justifyContent: 'space-between',
             marginTop: '3rem',
           }}>
           <div style={{ width: '164px' }} />
-          {/* <button>Show more</button> */}
 
           <div
             className="show-more"
             onClick={() => setShowInfo((prev) => !prev)}>
-            {/* <h3 className="show-more"> */}
-            {/* <button style={{ marginBottom: '20px' }}>
-              {showInfo ? 'Show less' : 'Show more'}
-            </button> */}
             <ShowMoreButton
               idToGlide="compound-show-more"
               showInfo={showInfo}
@@ -234,13 +260,47 @@ export default function Compound({ title }: { title: string }) {
             />
             <div style={{ width: '20px' }} />
           </div>
+        </div> */}
+
+        <div className="chrome-extension-buttons-container">
+          <div style={{ width: '164px' }} />
+
+          <div
+            className="show-more"
+            onClick={() => setShowInfo((prev) => !prev)}>
+            <ShowMoreButton
+              idToGlide="chrom-extension-show-more"
+              showInfo={showInfo}
+            />
+
+            <LiaAngleDoubleDownSolid
+              className={showInfo ? 'show-less-icon' : 'show-more-icon'}
+            />
+          </div>
+
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              gap: '2rem',
+            }}>
+            <FaGithub className="icon" onClick={handleGithubClick} size={40} />
+            <CiShare1
+              className="icon"
+              onClick={handleOpenProjectUrl}
+              size={40}
+            />
+
+            {!isMobile && <div style={{ width: '40px' }} />}
+          </div>
         </div>
       </div>
 
       <div id="compound-show-more" />
 
       {/* SHOW_MORE */}
-      {showInfo && <ShowMore />}
+      {/* {showInfo && <ShowMore />} */}
+      <ShowMore />
       {/* <BottomDivider /> */}
     </>
   );
