@@ -11,7 +11,6 @@ import { openWindow } from '../../../helper_functions/helper_functions';
 import ShowMoreButton from '../../reusable/ShowMoreButton';
 import BottomDivider from '../../reusable/BottomDivider';
 import { useMobile } from '../../../Contexts/MobileProvider';
-import MobileTechStack from '../../reusable/MobileTechStack';
 
 const gitHubUrl = 'https://github.com/Eytan3000/compound-interest-client';
 
@@ -25,7 +24,7 @@ const gitHubUrl = 'https://github.com/Eytan3000/compound-interest-client';
 // ];
 
 const userStory = (
-  <p style={{ maxWidth: '50%' }}>
+  <p className="user-story">
     As a Sound Designer, I want to utilize the power of AI to easily upload
     sound effects to marketplaces online and streamlining the sales process.
   </p>
@@ -146,7 +145,7 @@ function ShowMore() {
 
         <div className="grid-item flex_jc-center">
           <img
-            className="chrome-exten-chart-images"
+            className="chrome-extension-chart-img"
             src={chart}
             alt="compound-form-images"
           />
@@ -157,7 +156,7 @@ function ShowMore() {
           appropriate text boxes, including an animated loader
         </p>
         <img
-          className="compound-form-chart-images"
+          className="chrome-extension-loader-img"
           src={loader}
           alt="compound-form-images"
         />
@@ -168,7 +167,7 @@ function ShowMore() {
           <ol>
             <li>
               <strong>
-                A scraper to retrieve tags from other places in the:
+                A scraper to retrieve tags from the website:
               </strong>
               <p>
                 A Scraper that sits on a Google Cloud Function, which gathers

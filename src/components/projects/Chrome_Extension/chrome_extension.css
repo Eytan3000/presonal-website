@@ -89,11 +89,25 @@ td {
   margin: 0 auto;
   border-radius: 15px;
 } */
-.chrome-exten-chart-images {
+.chrome-extension-chart-img {
   height: 300px;
   border: 0.5px solid #bbbbbb;
   margin: 0 auto;
-  border-radius: 15px;
+  /* border-radius: 15px; */
+
+  border-radius: min(5vw, 15px); /* Adjust the maximum border radius */
+  border-radius: max(2vw, 10px); /* Adjust the minimum border radius */
+}
+
+.chrome-extension-loader-img {
+  height: 50dvw;
+  border: 0.5px solid #bbbbbb;
+  margin: 0 auto;
+  /* border-radius: 15px; */
+
+  /* border radius ajusted to the screen */
+  border-radius: min(5vw, 15px); /* Adjust the maximum border radius */
+  border-radius: max(2vw, 10px); /* Adjust the minimum border radius */
 }
 
 .grid-item {
@@ -154,5 +168,14 @@ td {
     flex-direction: column-reverse;
     align-items: center;
     margin-top: 2rem;
+  }
+  .chrome-extension-chart-img {
+    height: 100px;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 800px) {
+  .chrome-extension-chart-img {
+    height: 200px;
   }
 }
