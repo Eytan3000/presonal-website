@@ -2,7 +2,6 @@ import Card from '../reusable/Card';
 import './aboutMe.css';
 import { useMobile } from '../../Contexts/MobileProvider';
 
-import portraitImg from '../../assets/about/self_portrait_enhanced.png';
 // import portraitImg from '../../assets/about/self_portrait_enhanced_no_bg.png';
 export default function AboutMe() {
   const { isMobile } = useMobile();
@@ -44,7 +43,8 @@ export default function AboutMe() {
               display: 'flex',
               justifyContent: 'center',
             }}>
-            <div
+            {/* Protrait image */}
+            {/* <div
               style={{
                 marginTop: '20px',
                 border: '0.5px solid #b9b9b9',
@@ -56,7 +56,7 @@ export default function AboutMe() {
                 src={portraitImg}
                 alt="portrait-img"
               />
-            </div>
+            </div> */}
           </div>
         </div>
       ) : (
@@ -88,7 +88,8 @@ export default function AboutMe() {
             learning, deepening my understanding of the technologies within my
             stack, which includes:
           </p>
-          <div
+          {/* Protrait image */}
+          {/* <div  
             style={{
               marginTop: '20px',
               border: '0.5px solid #b9b9b9',
@@ -101,7 +102,7 @@ export default function AboutMe() {
               src={portraitImg}
               alt="portrait-img"
             />
-          </div>
+          </div> */}
         </div>
         // you can add a PHOTO here
       )}

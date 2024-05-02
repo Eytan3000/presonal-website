@@ -5,15 +5,16 @@ import { CiShare1 } from 'react-icons/ci';
 import { LiaAngleDoubleDownSolid } from 'react-icons/lia';
 import { useState } from 'react';
 
-import mainImage from '../../../assets/placeholders/main_compound.png';
+import mainImage from '../../../assets/Projects/compound/compound_main.png';
+
 import chartImg from '../../../assets/Projects/compound/chart.png';
 import yahooApi from '../../../assets/Projects/compound/yahoo_finance.png';
 import { openWindow } from '../../../helper_functions/helper_functions';
 import ShowMoreButton from '../../reusable/ShowMoreButton';
 import { useMobile } from '../../../Contexts/MobileProvider';
 
-const projectUrl = 'https://compound-calc.netlify.app/';
-const gitHubUrl = 'https://github.com/Eytan3000/compound-interest-client';
+const projectUrl = 'https://free-compound.netlify.app/';
+const gitHubUrl = 'https://github.com/Eytan3000/compound-interest-calc-NEW-3';
 
 const userStory = (
   <p className="user-story">

@@ -26,7 +26,7 @@ const projectUrl = 'https://planifyapp.netlify.app/';
 const gitHubUrl = 'https://github.com/Eytan3000/appointment_client';
 const mainDashUrl = 'https://planifyapp.netlify.app/main-calendar';
 const patientScreenUrl =
-  'https://planifyapp.netlify.app/client/Um4i1ArauPht0EvywK7Ob4NwsIH2';
+  'https://planifyapp.netlify.app/client/eEs9Nc1H5oN5u08a0ciE1GZ1WVt2';
 
 const emailToMainDash = 'Pawsitive_600@gmail.com';
 const passToMainDash = '123456';
@@ -151,7 +151,7 @@ function ShowMore() {
       <div className="show-more-container animated-component">
         <h3>User Story:</h3>
         {userStory}
-        <h2>Therapist’s Dashboard:</h2>
+        <h2>User Dashboard:</h2>
         <p>
           In the main dashboard, the therapist can add, delete, or edit
           appointments, manage client lists, and update business details.

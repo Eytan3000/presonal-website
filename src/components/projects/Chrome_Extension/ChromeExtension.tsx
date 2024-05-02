@@ -134,7 +134,7 @@ function ShowMore() {
           tags from analogous sound effects within the marketplace.
         </p>
 
-        <h2>Chrome Extension Diagram</h2>
+        <h2>Chrome Extension Diagram:</h2>
         <p>
           This diagram shows how the Chrome extension interacts with various
           components
