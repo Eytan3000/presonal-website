@@ -32,70 +32,6 @@ const userStory = (
   </p>
 );
 
-function Details() {
-  const { isMobile } = useMobile();
-  return (
-    <>
-      {!isMobile && (
-        <p style={{ display: 'inline-block', marginBlock: '0 20px' }}>
-          Tools and technologies used in this project:
-        </p>
-      )}
-
-      {/* {isMobile ? (
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            marginTop: '2rem',
-            flexWrap: 'wrap',
-            gap: '10px',
-          }}>
-          <div
-            style={{
-              display: 'flex',
-
-              gap: '10px',
-            }}>
-            <div className="chrome-extension-mobile-tech-card">React</div>
-            <div className="chrome-extension-mobile-tech-card">Redux</div>
-          </div>
-
-          <div
-            style={{
-              display: 'flex',
-
-              gap: '10px',
-            }}>
-            <div className="chrome-extension-mobile-tech-card">TypeScript</div>
-            <div className="chrome-extension-mobile-tech-card">
-              Local storage
-            </div>
-          </div>
-
-          <div className="chrome-extension-mobile-tech-card">
-            Yahoo Finance API
-          </div>
-        </div>
-      ) : ( */}
-        {/* // <>
-        //   <div className="tech-card-container-2 ">
-        //     <div className="tech-card">React</div>
-        //     <div className="tech-card">Redux</div>
-        //     <div className="tech-card">TypeScript</div>
-        //   </div>
-        //   <div className="tech-card-container-2 ">
-        //     <div className="tech-card">Local storage</div>
-        //     <div className="tech-card">Yahoo Finance API</div>
-        //   </div>
-        // </> */}
-        <TechGrid techList={techList} />
-        
-      {/* )} */}
-    </>
-  );
-}
-
 function ShowMore() {
   return (
     <>
@@ -234,7 +170,7 @@ export default function Compound({ title }: { title: string }) {
             />
           </div>
           <div style={{ margin: '0 2rem' }} className="right-section">
-            <Details />
+            <TechGrid techList={techList} />
           </div>
         </div>
 

@@ -67,7 +67,7 @@ function getMobileNestedArr(techList: string[]) {
 export function TechGrid({ techList }: { techList: string[] }) {
   const { isMobile } = useMobile();
 
-    // techList.sort((a, b) => a.length - b.length);
+  // techList.sort((a, b) => a.length - b.length);
 
   const desktopNestedArr = getDesktopNestedArr(techList);
   const mobileNestedArr = getMobileNestedArr(techList);
@@ -79,23 +79,23 @@ export function TechGrid({ techList }: { techList: string[] }) {
           Tools and technologies used in this project:
         </p>
       )}
-
-      {isMobile
-        ? mobileNestedArr.map((nestedArr) => (
-            <div className={`tech-card-container-1${nestedArr.length}`}>
-              {nestedArr.map((techName) => (
-                <div className="tech-card">{techName}</div>
-              ))}
-            </div>
-          ))
-        : // <div>eytan</div>
-          desktopNestedArr.map((nestedArr) => (
-            <div className={`tech-card-container-1${nestedArr.length}`}>
-              {nestedArr.map((techName) => (
-                <div className="tech-card">{techName}</div>
-              ))}
-            </div>
-          ))}
+      <div style={{ marginTop: '1.5rem' }}>
+        {isMobile
+          ? mobileNestedArr.map((nestedArr) => (
+              <div className={`tech-card-container-1${nestedArr.length}`}>
+                {nestedArr.map((techName) => (
+                  <div className="tech-card">{techName}</div>
+                ))}
+              </div>
+            ))
+          : desktopNestedArr.map((nestedArr) => (
+              <div className={`tech-card-container-1${nestedArr.length}`}>
+                {nestedArr.map((techName) => (
+                  <div className="tech-card">{techName}</div>
+                ))}
+              </div>
+            ))}
+      </div>
     </>
   );
 }

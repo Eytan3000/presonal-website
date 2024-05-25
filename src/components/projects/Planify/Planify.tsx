@@ -32,7 +32,7 @@ const patientScreenUrl =
 const emailToMainDash = 'Pawsitive_600@gmail.com';
 const passToMainDash = '123456';
 
-const mobileStack = [
+const techList = [
   'TypeScript',
   'MySQL',
   'NodeJS',
@@ -50,33 +50,6 @@ const userStory = (
     and we both receive a notification with the appointment details.
   </p>
 );
-
-// function TechStackGrid() {
-//   return (
-//     <>
-//       <p style={{ display: 'inline-block', marginBlock: '0 20px' }}>
-//         Tools and technologies used in this project:
-//       </p>
-
-//       <div className="tech-card-container-2 ">
-//         <div className="tech-card">React</div>
-//         <div className="tech-card">TypeScript</div>
-//         <div className="tech-card">MySQL</div>
-//       </div>
-//       <div className="tech-card-container-2 ">
-//         <div className="tech-card">NodeJS</div>
-//         <div className="tech-card">ExpressJS</div>
-//         <div className="tech-card">React</div>
-//       </div>
-//       <div className="tech-card-container-2 ">
-//         <div className="tech-card">JWT</div>
-//         <div className="tech-card">Firebase</div>
-//         <div className="tech-card">Cloud Storage</div>
-//       </div>
-//     </>
-//   );
-// }
-
 function CredentialTable() {
   const [emailCopyState, setEmailCopyState] = useState('Copy');
   const [passCopyState, setPassCopyState] = useState('Copy');
@@ -303,10 +276,9 @@ export default function Planify({ title }: { title: string }) {
             style={{ margin: '0 2rem' }}
             className="planify-grid-right-section">
             {isMobile ? (
-              <MobileTechStack technologies={mobileStack} />
+              <MobileTechStack technologies={techList} />
             ) : (
-              // <TechStackGrid />
-              <TechGrid techList={mobileStack} />
+              <TechGrid techList={techList} />
             )}
           </div>
         </div>

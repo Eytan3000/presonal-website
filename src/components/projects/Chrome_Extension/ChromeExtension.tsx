@@ -31,75 +31,7 @@ const userStory = (
   </p>
 );
 
-function Details() {
-  const { isMobile } = useMobile();
-  return (
-    <>
-      {!isMobile && (
-        <p style={{ display: 'inline-block', marginBlock: '0 20px' }}>
-          Tools and technologies used in this project:
-        </p>
-      )}
-      {isMobile ? (
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            marginTop: '2rem',
-            flexWrap: 'wrap',
-            gap: '10px',
-          }}>
-          <div
-            style={{
-              display: 'flex',
-              // justifyContent: 'space-around',
-              // flexWrap: 'wrap',
-              gap: '10px',
-              width: '100%',
-            }}>
-            <div
-              className="chrome-extension-mobile-tech-card"
-              style={{ width: '40%' }}>
-              OpenAI API
-            </div>
-            <div
-              className="chrome-extension-mobile-tech-card"
-              style={{ width: '30%' }}>
-              React
-            </div>
-          </div>
 
-          <div
-            style={{
-              display: 'flex',
-
-              gap: '10px',
-            }}>
-            <div
-              className="chrome-extension-mobile-tech-card"
-              style={{ width: '25%' }}>
-              TypeScript
-            </div>
-            <div
-              className="chrome-extension-mobile-tech-card"
-              style={{ width: '35%' }}>
-              Content Script
-            </div>
-          </div>
-          <div className="chrome-extension-mobile-tech-card">
-            Google Cloud Function
-          </div>
-          <div className="chrome-extension-mobile-tech-card">
-            Firebase Realtime Database
-          </div>
-        </div>
-      ) : (
-        <TechGrid techList={techList} />
-      )}
-      <TechGrid techList={techList} />
-    </>
-  );
-}
 
 function ShowMore() {
   return (
@@ -201,7 +133,7 @@ export default function ChromeExtension({ title }: { title: string }) {
             />
           </div>
           <div style={{ margin: '0 2rem' }} className="right-section">
-            <Details />
+          <TechGrid techList={techList} />
           </div>
         </div>
 
