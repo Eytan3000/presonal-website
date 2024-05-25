@@ -1,0 +1,31 @@
+.tech-card {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 1.5rem;
+  border: 0.5px solid #7f00e0;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(120, 118, 118, 0.2);
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.tech-card-container-11 {
+  display: grid;
+  grid-template-columns: auto;
+}
+.tech-card-container-12 {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.tech-card-container-13 {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+@media only screen and (max-width: 768px) {
+  .tech-card {
+    padding: 1rem 1rem;
+  }
+}

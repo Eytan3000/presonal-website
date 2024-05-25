@@ -9,6 +9,7 @@ import Contact from './components/contact/Contact';
 import MobileMenuModal from './components/menuBar/MobileMenuModal';
 import { useState } from 'react';
 
+
 function SectionDivider({
   number,
   title,
@@ -83,6 +84,7 @@ function App() {
         />
         <Contact />
       </div>
+        
     </>
   );
 }

@@ -11,17 +11,18 @@ import { openWindow } from '../../../helper_functions/helper_functions';
 import ShowMoreButton from '../../reusable/ShowMoreButton';
 import BottomDivider from '../../reusable/BottomDivider';
 import { useMobile } from '../../../Contexts/MobileProvider';
+import { TechGrid } from '../../reusable/techGrid/TechGrid';
 
 const gitHubUrl = 'https://github.com/Eytan3000/compound-interest-client';
 
-// const mobileStack = [
-//   'OpenAI API',
-//   'React',
-//   'TypeScript',
-//   'Google Cloud Function',
-//   'Content Script',
-//   'Firebase Realtime Database',
-// ];
+const techList = [
+  'OpenAI API',
+  'React',
+  'TypeScript',
+  'Google Cloud Function',
+  'Content Script',
+  'Firebase Database',
+];
 
 const userStory = (
   <p className="user-story">
@@ -39,7 +40,6 @@ function Details() {
           Tools and technologies used in this project:
         </p>
       )}
-
       {isMobile ? (
         <div
           style={{
@@ -94,21 +94,9 @@ function Details() {
           </div>
         </div>
       ) : (
-        <>
-          <div className="tech-card-container-2 ">
-            <div className="tech-card">OpenAI API</div>
-            <div className="tech-card">React</div>
-            <div className="tech-card">TypeScript</div>
-          </div>
-          <div className="tech-card-container-2 ">
-            <div className="tech-card">Google Cloud Function</div>
-            <div className="tech-card">Content Script</div>
-          </div>
-          <div className="tech-card-container-2 ">
-            <div className="tech-card">Firebase Realtime Database</div>
-          </div>
-        </>
+        <TechGrid techList={techList} />
       )}
+      <TechGrid techList={techList} />
     </>
   );
 }
@@ -201,7 +189,7 @@ export default function ChromeExtension({ title }: { title: string }) {
           {title}
         </h2>
         <p style={{ color: '#7f00e0', marginBottom: '3rem' }}>
-          An AI sound effects marketplace form filler
+          An AI assistant for submitting sound effects in virtual marketplace
         </p>
 
         <div className="chrome-extension-grid-container">

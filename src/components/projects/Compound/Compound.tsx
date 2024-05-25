@@ -12,9 +12,18 @@ import yahooApi from '../../../assets/Projects/compound/yahoo_finance.png';
 import { openWindow } from '../../../helper_functions/helper_functions';
 import ShowMoreButton from '../../reusable/ShowMoreButton';
 import { useMobile } from '../../../Contexts/MobileProvider';
+import { TechGrid } from '../../reusable/techGrid/TechGrid';
 
 const projectUrl = 'https://free-compound.netlify.app/';
 const gitHubUrl = 'https://github.com/Eytan3000/compound-interest-calc-NEW-3';
+
+const techList = [
+  'React',
+  'Redux',
+  'TypeScript',
+  'Local storage',
+  'Yahoo Finance API',
+];
 
 const userStory = (
   <p className="user-story">
@@ -33,7 +42,7 @@ function Details() {
         </p>
       )}
 
-      {isMobile ? (
+      {/* {isMobile ? (
         <div
           style={{
             display: 'flex',
@@ -68,19 +77,21 @@ function Details() {
             Yahoo Finance API
           </div>
         </div>
-      ) : (
-        <>
-          <div className="tech-card-container-2 ">
-            <div className="tech-card">React</div>
-            <div className="tech-card">Redux</div>
-            <div className="tech-card">TypeScript</div>
-          </div>
-          <div className="tech-card-container-2 ">
-            <div className="tech-card"> Local storage</div>
-            <div className="tech-card">Yahoo Finance API</div>
-          </div>
-        </>
-      )}
+      ) : ( */}
+        {/* // <>
+        //   <div className="tech-card-container-2 ">
+        //     <div className="tech-card">React</div>
+        //     <div className="tech-card">Redux</div>
+        //     <div className="tech-card">TypeScript</div>
+        //   </div>
+        //   <div className="tech-card-container-2 ">
+        //     <div className="tech-card">Local storage</div>
+        //     <div className="tech-card">Yahoo Finance API</div>
+        //   </div>
+        // </> */}
+        <TechGrid techList={techList} />
+        
+      {/* )} */}
     </>
   );
 }

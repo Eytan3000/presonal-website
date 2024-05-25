@@ -21,6 +21,7 @@ import ShowMoreButton from '../../reusable/ShowMoreButton';
 import BottomDivider from '../../reusable/BottomDivider';
 import { useMobile } from '../../../Contexts/MobileProvider';
 import MobileTechStack from '../../reusable/MobileTechStack';
+import { TechGrid } from '../../reusable/techGrid/TechGrid';
 
 const projectUrl = 'https://planifyapp.netlify.app/';
 const gitHubUrl = 'https://github.com/Eytan3000/appointment_client';
@@ -50,31 +51,31 @@ const userStory = (
   </p>
 );
 
-function TechStackGrid() {
-  return (
-    <>
-      <p style={{ display: 'inline-block', marginBlock: '0 20px' }}>
-        Tools and technologies used in this project:
-      </p>
+// function TechStackGrid() {
+//   return (
+//     <>
+//       <p style={{ display: 'inline-block', marginBlock: '0 20px' }}>
+//         Tools and technologies used in this project:
+//       </p>
 
-      <div className="tech-card-container-2 ">
-        <div className="tech-card">React</div>
-        <div className="tech-card">TypeScript</div>
-        <div className="tech-card">MySQL</div>
-      </div>
-      <div className="tech-card-container-2 ">
-        <div className="tech-card">NodeJS</div>
-        <div className="tech-card">ExpressJS</div>
-        <div className="tech-card">React</div>
-      </div>
-      <div className="tech-card-container-2 ">
-        <div className="tech-card">JWT</div>
-        <div className="tech-card">Firebase</div>
-        <div className="tech-card">Cloud Storage</div>
-      </div>
-    </>
-  );
-}
+//       <div className="tech-card-container-2 ">
+//         <div className="tech-card">React</div>
+//         <div className="tech-card">TypeScript</div>
+//         <div className="tech-card">MySQL</div>
+//       </div>
+//       <div className="tech-card-container-2 ">
+//         <div className="tech-card">NodeJS</div>
+//         <div className="tech-card">ExpressJS</div>
+//         <div className="tech-card">React</div>
+//       </div>
+//       <div className="tech-card-container-2 ">
+//         <div className="tech-card">JWT</div>
+//         <div className="tech-card">Firebase</div>
+//         <div className="tech-card">Cloud Storage</div>
+//       </div>
+//     </>
+//   );
+// }
 
 function CredentialTable() {
   const [emailCopyState, setEmailCopyState] = useState('Copy');
@@ -304,7 +305,8 @@ export default function Planify({ title }: { title: string }) {
             {isMobile ? (
               <MobileTechStack technologies={mobileStack} />
             ) : (
-              <TechStackGrid />
+              // <TechStackGrid />
+              <TechGrid techList={mobileStack} />
             )}
           </div>
         </div>

@@ -5,9 +5,9 @@ import './index.css';
 import { MobileProvider } from './Contexts/MobileProvider.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <MobileProvider>
       <App />
     </MobileProvider>
-  </React.StrictMode>
+  // </React.StrictMode>
 );

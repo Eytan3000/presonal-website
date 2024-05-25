@@ -165,7 +165,7 @@ button:hover {
   display: grid;
   grid-template-columns: auto auto auto;
 }
-.tech-card {
+/* .tech-card {
   display: flex;
   justify-content: center;
   padding: 1rem 1.5rem;
@@ -175,7 +175,7 @@ button:hover {
   margin-right: 1rem;
   margin-bottom: 1rem;
   white-space: nowrap;
-}
+} */
 
 .projects-buttons {
   display: flex;
