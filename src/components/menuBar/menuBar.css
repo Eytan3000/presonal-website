@@ -9,13 +9,8 @@
   font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
   font-size: 0.75em;
   font-weight: 600;
-  /* line-height: 18px; */
+
   color: #0f1b61;
-  /* color: #4053bb; */
-  /* color: #646cff; */
-  /* color: var(--main-color); */
-  /* margin-right: 30px; */
-  /* margin: auto 30px; */
 }
 
 .menu-links-container {
@@ -28,17 +23,13 @@
 
 .menu-text-number {
   font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
-  /* font-size: 1em; */
   font-weight: 600;
-  /* color: #646cff; */
   color: var(--main-color);
 }
 
 .logo {
   height: 2em;
-  /* padding: 1.5em; */
   will-change: filter;
   transition: filter 300ms;
   margin: auto 30px;
-  /* flex: 1; */
 }

@@ -40,7 +40,6 @@ function ShowMore() {
       <div className="show-more-container animated-component">
         <h3>User Story:</h3>
 
-        {/* <p style={{ maxWidth: '50%' }}>{userStory}</p> */}
         {userStory}
 
         <p

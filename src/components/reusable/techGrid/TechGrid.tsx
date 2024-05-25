@@ -61,7 +61,6 @@ function getMobileNestedArr(techList: string[]) {
     }
     i2++;
   }
-  console.log('mobile newArr: ', newArr); //removeEytan
   return newArr;
 }
 export function TechGrid({ techList }: { techList: string[] }) {
@@ -81,17 +80,25 @@ export function TechGrid({ techList }: { techList: string[] }) {
       )}
       <div style={{ marginTop: '1.5rem' }}>
         {isMobile
-          ? mobileNestedArr.map((nestedArr) => (
-              <div className={`tech-card-container-1${nestedArr.length}`}>
-                {nestedArr.map((techName) => (
-                  <div className="tech-card">{techName}</div>
+          ? mobileNestedArr.map((nestedArr, index) => (
+              <div
+                key={index}
+                className={`tech-card-container-1${nestedArr.length}`}>
+                {nestedArr.map((techName, idx) => (
+                  <div key={idx} className="tech-card">
+                    {techName}
+                  </div>
                 ))}
               </div>
             ))
-          : desktopNestedArr.map((nestedArr) => (
-              <div className={`tech-card-container-1${nestedArr.length}`}>
-                {nestedArr.map((techName) => (
-                  <div className="tech-card">{techName}</div>
+          : desktopNestedArr.map((nestedArr, index) => (
+              <div
+                key={index}
+                className={`tech-card-container-1${nestedArr.length}`}>
+                {nestedArr.map((techName, idx) => (
+                  <div key={idx} className="tech-card">
+                    {techName}
+                  </div>
                 ))}
               </div>
             ))}

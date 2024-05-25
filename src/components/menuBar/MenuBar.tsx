@@ -14,9 +14,6 @@ function DesktopMenuBar() {
             <span className="menu-text-number">01.</span> About
           </h3>
         </a>
-        {/* <h3 className="menu-text">
-          <span className="menu-text-number">02.</span> Experience
-        </h3> */}
         <a href="#section2-projects">
           <h3 className="menu-text">
             <span className="menu-text-number">02.</span> Work

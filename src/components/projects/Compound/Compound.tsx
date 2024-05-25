@@ -49,23 +49,6 @@ function ShowMore() {
           initial investment, monthly contributions, duration of growth, and the
           estimated interest rate.
         </p>
-        {/* <div className="grid-container">
-          <div className="grid-item">
-            <img
-              className="compound-form-chart-images"
-              src={formImg}
-              alt="compound-form-images"
-            />
-          </div>
-          <div className="grid-item">
-            {' '}
-            <img
-              className="compound-form-chart-images"
-              src={chartImg}
-              alt="compound-chart-images"
-            />
-          </div>
-        </div> */}
 
         <div className="grid-item flex_jc-center">
           <img
@@ -174,41 +157,7 @@ export default function Compound({ title }: { title: string }) {
           </div>
         </div>
 
-        {/* <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            marginTop: '3rem',
-          }}>
-          <div style={{ width: '164px' }} />
-
-          <div
-            className="show-more"
-            onClick={() => setShowInfo((prev) => !prev)}>
-            <ShowMoreButton
-              idToGlide="compound-show-more"
-              showInfo={showInfo}
-            />
-            <LiaAngleDoubleDownSolid
-              className={showInfo ? 'show-less-icon' : 'show-more-icon'}
-            />
-          </div>
-
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              gap: '2rem',
-            }}>
-            <FaGithub className="icon" onClick={handleGithubClick} size={40} />
-            <CiShare1
-              className="icon"
-              onClick={handleOpenProjectUrl}
-              size={40}
-            />
-            <div style={{ width: '20px' }} />
-          </div>
-        </div> */}
+        
 
         <div className="chrome-extension-buttons-container">
           <div style={{ width: '164px' }} />

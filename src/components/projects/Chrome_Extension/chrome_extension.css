@@ -100,15 +100,10 @@ td {
 }
 
 .chrome-extension-loader-img {
-  /* height: 50dvw; */
   height: min(50dvw, 500px);
   border: 0.5px solid #bbbbbb;
   margin: 0 auto;
   border-radius: 15px;
-
-  /* border radius ajusted to the screen */
-  /* border-radius: min(5vw, 10px); 
-  border-radius: max(2vw, 10px);  */
 }
 
 .grid-item {
@@ -127,21 +122,6 @@ td {
   margin-top: 2rem;
   margin-inline: 5rem;
 }
-.chrome-extension-mobile-tech-card {
-  display: flex;
-  justify-content: center;
-  padding: 1rem 1rem;
-  border: 0.5px solid #7f00e0;
-  border-radius: 10px;
-  box-shadow: 0 0 5px rgba(120, 118, 118, 0.2);
-  /* margin-right: 1rem; */
-  margin-bottom: 1rem;
-  white-space: nowrap;
-
-  width: 90%;
-  padding-right: 20px;
-  font-weight: bold;
-}
 
 .chrome-extension-buttons-container {
   display: flex;
@@ -154,10 +134,7 @@ td {
     height: 300px;
   }
   .chrome-extension-main-container {
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: center; */
-    /* margin-top: 2rem; */
+
     margin-inline: 0rem;
   }
   .chrome-extension-grid-container {

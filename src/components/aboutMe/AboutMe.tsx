@@ -2,17 +2,13 @@ import Card from '../reusable/Card';
 import './aboutMe.css';
 import { useMobile } from '../../Contexts/MobileProvider';
 
-// import portraitImg from '../../assets/about/self_portrait_enhanced_no_bg.png';
 export default function AboutMe() {
   const { isMobile } = useMobile();
   return (
     <>
       {!isMobile ? (
         <div style={{ marginTop: '2rem' }} className="grid-container">
-          <div
-            className="left-section"
-            // style={{ marginLeft: '20px', width: '40%' }}
-          >
+          <div className="left-section">
             <p style={{ fontSize: '20px' }}>
               I come from a music and sound design background, and about two
               years ago I started learning JavaScript. What started as a
@@ -42,22 +38,7 @@ export default function AboutMe() {
             style={{
               display: 'flex',
               justifyContent: 'center',
-            }}>
-            {/* Protrait image */}
-            {/* <div
-              style={{
-                marginTop: '20px',
-                border: '0.5px solid #b9b9b9',
-                padding: '10px 10px 6px 10px',
-                borderRadius: '10px',
-              }}>
-              <img
-                className="portrait-img"
-                src={portraitImg}
-                alt="portrait-img"
-              />
-            </div> */}
-          </div>
+            }}></div>
         </div>
       ) : (
         <div
@@ -88,23 +69,7 @@ export default function AboutMe() {
             learning, deepening my understanding of the technologies within my
             stack, which includes:
           </p>
-          {/* Protrait image */}
-          {/* <div  
-            style={{
-              marginTop: '20px',
-              border: '0.5px solid #b9b9b9',
-              padding: '10px 10px 6px 10px',
-              borderRadius: '10px',
-            }}>
-            <img
-              className="portrait-img-mobile"
-              style={{}}
-              src={portraitImg}
-              alt="portrait-img"
-            />
-          </div> */}
         </div>
-        // you can add a PHOTO here
       )}
 
       <h2
@@ -119,7 +84,6 @@ export default function AboutMe() {
           style={{
             width: '100%',
             display: 'flex',
-            // justifyContent: 'space-between',
             flexWrap: 'wrap',
           }}>
           <Card title={'JavaScript'} />
