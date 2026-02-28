@@ -1,5 +1,6 @@
 import { Modal, ModalClose, Sheet } from '@mui/joy';
 import React, { SetStateAction } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function MobileMenuModal({
   setIsMenuClicked,
@@ -41,7 +42,7 @@ export default function MobileMenuModal({
             gap: '2rem',
             width: '60dvw',
           }}>
-          <a href="#section1-about-me" onClick={handleClick}>
+          <a href="/#section1-about-me" onClick={handleClick} style={{ textDecoration: 'none' }}>
             <h3
               style={{
                 fontSize: '30px',
@@ -52,7 +53,17 @@ export default function MobileMenuModal({
             </h3>
           </a>
 
-          <a href="#section2-projects" onClick={handleClick}>
+          <Link to="/blog" onClick={handleClick} style={{ textDecoration: 'none' }}>
+            <h3
+              style={{
+                fontSize: '30px',
+                color: '#0f1b61',
+              }}>
+              Blog
+            </h3>
+          </Link>
+
+          <a href="/#section2-projects" onClick={handleClick} style={{ textDecoration: 'none' }}>
             <h3
               style={{
                 fontSize: '30px',
@@ -61,7 +72,7 @@ export default function MobileMenuModal({
               Work
             </h3>
           </a>
-          <a href="#section3-contact" onClick={handleClick}>
+          <a href="/#section3-contact" onClick={handleClick} style={{ textDecoration: 'none' }}>
             <h3
               style={{
                 fontSize: '30px',
