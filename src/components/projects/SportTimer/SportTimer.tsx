@@ -26,9 +26,8 @@ const techList = [
 
 const userStory = (
   <p className="user-story">
-    As an <strong>athlete</strong>, I want to track my workouts, exercises, sets,
-    and weights, so I can monitor my progress and get suggestions for my next
-    workout.
+    As an gym-goer, I want to track my workouts, exercises, sets, and weights,
+    so I can monitor my progress and get suggestions for my next workout.
   </p>
 );
 

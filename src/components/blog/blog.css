@@ -32,7 +32,7 @@
   cursor: pointer;
   text-decoration: none;
   color: inherit;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .blog-card:hover {
@@ -118,7 +118,7 @@
   object-fit: cover;
   border-radius: 12px;
   margin-bottom: 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .blog-post-content {
@@ -193,11 +193,11 @@
   .blog-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .blog-post-image {
     height: 250px;
   }
-  
+
   .blog-header h1 {
     font-size: 3rem;
   }
