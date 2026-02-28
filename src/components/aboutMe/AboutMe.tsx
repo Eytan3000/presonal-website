@@ -1,15 +1,15 @@
-import Card from '../reusable/Card';
-import './aboutMe.css';
-import { useMobile } from '../../Contexts/MobileProvider';
+import Card from "../reusable/Card";
+import "./aboutMe.css";
+import { useMobile } from "../../Contexts/MobileProvider";
 
 export default function AboutMe() {
   const { isMobile } = useMobile();
   return (
     <>
       {!isMobile ? (
-        <div style={{ marginTop: '2rem' }} className="grid-container">
+        <div style={{ marginTop: "2rem" }} className="grid-container">
           <div className="left-section">
-            <p style={{ fontSize: '20px' }}>
+            <p style={{ fontSize: "20px" }}>
               I come from a music and sound design background, and about two
               years ago I started learning JavaScript. What started as a
               curiosity-driven journey into coding has evolved into a deep love
@@ -18,15 +18,16 @@ export default function AboutMe() {
               <br />
               <b
                 style={{
-                  fontSize: '30px',
-                  display: 'inline-block',
-                  marginTop: '6px',
-                }}>
+                  fontSize: "30px",
+                  display: "inline-block",
+                  marginTop: "6px",
+                }}
+              >
                 Today
-              </b>{' '}
+              </b>{" "}
               I work for a company that provides a platform for the Ministry of
               Education, solving real-world problems, and collaborating with a
-              real professional team. <br /> At the same time,{' '}
+              real professional team. <br /> At the same time,{" "}
               <b> I pursue personal projects </b>, constantly researching and
               learning, deepening my understanding of the technologies within my
               stack, which includes:
@@ -36,18 +37,20 @@ export default function AboutMe() {
           <div
             className="right-section"
             style={{
-              display: 'flex',
-              justifyContent: 'center',
-            }}></div>
+              display: "flex",
+              justifyContent: "center",
+            }}
+          ></div>
         </div>
       ) : (
         <div
           style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}>
-          <p style={{ fontSize: '20px' }}>
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <p style={{ fontSize: "20px" }}>
             I come from a music and sound design background, and about two years
             ago I started learning JavaScript. What started as a
             curiosity-driven journey into coding has evolved into a deep love
@@ -56,15 +59,16 @@ export default function AboutMe() {
             <br />
             <b
               style={{
-                fontSize: '30px',
-                display: 'inline-block',
-                marginTop: '6px',
-              }}>
+                fontSize: "30px",
+                display: "inline-block",
+                marginTop: "6px",
+              }}
+            >
               Today
-            </b>{' '}
+            </b>{" "}
             I work for a company that provides a platform for the Ministry of
             Education, solving real-world problems, and collaborating with a
-            real professional team. <br /> At the same time,{' '}
+            real professional team. <br /> At the same time,{" "}
             <b> I pursue personal projects </b>, constantly researching and
             learning, deepening my understanding of the technologies within my
             stack, which includes:
@@ -74,34 +78,37 @@ export default function AboutMe() {
 
       <h2
         style={{
-          marginTop: '5rem',
-        }}>
-        {' '}
+          marginTop: "5rem",
+        }}
+      >
+        {" "}
         My stack:
       </h2>
       {!isMobile ? (
         <div
           style={{
-            width: '100%',
-            display: 'flex',
-            flexWrap: 'wrap',
-          }}>
-          <Card title={'JavaScript'} />
-          <Card title={'TypeScript'} />
-          <Card title={'React'} />
-          <Card title={'Redux'} />
-          <Card title={'NodeJS'} />
-          <Card title={'ExpressJS'} />
-          <Card title={'MySQL'} />
-          <Card title={'Github'} />
+            width: "100%",
+            display: "flex",
+            flexWrap: "wrap",
+          }}
+        >
+          <Card title={"JavaScript"} />
+          <Card title={"TypeScript"} />
+          <Card title={"React"} />
+          <Card title={"Redux"} />
+          <Card title={"NodeJS"} />
+          <Card title={"ExpressJS"} />
+          <Card title={"PostgreSQL"} />
+          <Card title={"Github"} />
         </div>
       ) : (
         <div
           style={{
-            display: 'flex',
-            justifyContent: 'space-around',
-            flexWrap: 'wrap',
-          }}>
+            display: "flex",
+            justifyContent: "space-around",
+            flexWrap: "wrap",
+          }}
+        >
           <div className="mobile-tech-card">JavaScript</div>
           <div className="mobile-tech-card">TypeScript</div>
           <div className="mobile-tech-card">React</div>

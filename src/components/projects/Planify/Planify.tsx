@@ -1,46 +1,46 @@
-import './planify.css';
+import "./planify.css";
 
-import { FaGithub } from 'react-icons/fa';
-import { CiShare1 } from 'react-icons/ci';
-import { LiaAngleDoubleDownSolid } from 'react-icons/lia';
-import { BsCopy } from 'react-icons/bs';
-import { Tooltip } from '@mui/joy';
-import { useState } from 'react';
+import { FaGithub } from "react-icons/fa";
+import { CiShare1 } from "react-icons/ci";
+import { LiaAngleDoubleDownSolid } from "react-icons/lia";
+import { BsCopy } from "react-icons/bs";
+import { Tooltip } from "@mui/joy";
+import { useState } from "react";
 
-import mainImage from '../../../assets/planify.png';
+import mainImage from "../../../assets/planify.png";
 
-import MainDashboardImg from '../../../assets/Projects/planify/planify_screens/User_dashboard_screen_desktop.png';
-import MainDashboardMobileImg from '../../../assets/Projects/planify/planify_screens/User_dashboard_screen_mobile.png';
+import MainDashboardImg from "../../../assets/Projects/planify/planify_screens/User_dashboard_screen_desktop.png";
+import MainDashboardMobileImg from "../../../assets/Projects/planify/planify_screens/User_dashboard_screen_mobile.png";
 
-import patientScreenImg from '../../../assets/Projects/planify/planify_screens/client_schedule_screen_desktop.png';
+import patientScreenImg from "../../../assets/Projects/planify/planify_screens/client_schedule_screen_desktop.png";
 
-import patientScreenMobileImg from '../../../assets/Projects/planify/planify_screens/client_schedule_screen_mobile.png';
+import patientScreenMobileImg from "../../../assets/Projects/planify/planify_screens/client_schedule_screen_mobile.png";
 
-import { openWindow } from '../../../helper_functions/helper_functions';
-import ShowMoreButton from '../../reusable/ShowMoreButton';
-import BottomDivider from '../../reusable/BottomDivider';
-import { useMobile } from '../../../Contexts/MobileProvider';
-import MobileTechStack from '../../reusable/MobileTechStack';
-import { TechGrid } from '../../reusable/techGrid/TechGrid';
+import { openWindow } from "../../../helper_functions/helper_functions";
+import ShowMoreButton from "../../reusable/ShowMoreButton";
+import BottomDivider from "../../reusable/BottomDivider";
+import { useMobile } from "../../../Contexts/MobileProvider";
+import MobileTechStack from "../../reusable/MobileTechStack";
+import { TechGrid } from "../../reusable/techGrid/TechGrid";
 
-const projectUrl = 'https://planifyapp.netlify.app/';
-const gitHubUrl = 'https://github.com/Eytan3000/appointment_client';
-const mainDashUrl = 'https://planifyapp.netlify.app/main-calendar';
+const projectUrl = "https://planifyapp.netlify.app/";
+const gitHubUrl = "https://github.com/Eytan3000/appointment_client";
+const mainDashUrl = "https://planifyapp.netlify.app/main-calendar";
 const patientScreenUrl =
-  'https://planifyapp.netlify.app/client/eEs9Nc1H5oN5u08a0ciE1GZ1WVt2';
+  "https://planifyapp.netlify.app/client/eEs9Nc1H5oN5u08a0ciE1GZ1WVt2";
 
-const emailToMainDash = 'Pawsitive_600@gmail.com';
-const passToMainDash = '123456';
+const emailToMainDash = "Pawsitive_600@gmail.com";
+const passToMainDash = "123456";
 
 const techList = [
-  'TypeScript',
-  'MySQL',
-  'NodeJS',
-  'ExpressJS',
-  'React',
-  'JWT',
-  'Firebase',
-  'Cloud Storage',
+  "TypeScript",
+  "MySQL",
+  "NodeJS",
+  "ExpressJS",
+  "React",
+  "JWT",
+  "Firebase",
+  "Cloud Storage",
 ];
 const userStory = (
   <p className="user-story">
@@ -51,33 +51,33 @@ const userStory = (
   </p>
 );
 function CredentialTable() {
-  const [emailCopyState, setEmailCopyState] = useState('Copy');
-  const [passCopyState, setPassCopyState] = useState('Copy');
+  const [emailCopyState, setEmailCopyState] = useState("Copy");
+  const [passCopyState, setPassCopyState] = useState("Copy");
 
   const handleCopyEmail = (text: string) => {
     navigator.clipboard
       .writeText(text)
       .then(() => {
-        setEmailCopyState('Copied!');
+        setEmailCopyState("Copied!");
         setTimeout(() => {
-          setEmailCopyState('Copy');
+          setEmailCopyState("Copy");
         }, 3000);
       })
       .catch((error) => {
-        console.error('Failed to copy:', error);
+        console.error("Failed to copy:", error);
       });
   };
   const handleCopyPassword = (text: string) => {
     navigator.clipboard
       .writeText(text)
       .then(() => {
-        setPassCopyState('Copied!');
+        setPassCopyState("Copied!");
         setTimeout(() => {
-          setPassCopyState('Copy');
+          setPassCopyState("Copy");
         }, 3000);
       })
       .catch((error) => {
-        console.error('Failed to copy:', error);
+        console.error("Failed to copy:", error);
       });
   };
 
@@ -92,7 +92,8 @@ function CredentialTable() {
             <Tooltip title={emailCopyState} variant="plain" placement="right">
               <td
                 className="icon copy-icon"
-                onClick={() => handleCopyEmail(emailToMainDash)}>
+                onClick={() => handleCopyEmail(emailToMainDash)}
+              >
                 <BsCopy />
               </td>
             </Tooltip>
@@ -103,7 +104,8 @@ function CredentialTable() {
             <Tooltip title={passCopyState} variant="plain" placement="right">
               <td
                 className="icon copy-icon"
-                onClick={() => handleCopyPassword(passToMainDash)}>
+                onClick={() => handleCopyPassword(passToMainDash)}
+              >
                 <BsCopy />
               </td>
             </Tooltip>
@@ -121,7 +123,7 @@ function ShowMore() {
 
   return (
     <>
-      {' '}
+      {" "}
       <div className="show-more-container animated-component">
         <h3>User Story:</h3>
         {userStory}
@@ -133,20 +135,20 @@ function ShowMore() {
         <div className="main-dash-grid-container">
           <div className="grid-item">
             <div>
-              <a href={mainDashUrl} target={'_blank'} className="inline-link">
-                Go to Main Dashborad{' '}
+              <a href={mainDashUrl} target={"_blank"} className="inline-link">
+                Go to Main Dashborad{" "}
               </a>
             </div>
 
             <CredentialTable />
           </div>
           <div className="grid-item cursor" onClick={handOpenMainDash}>
-            {' '}
+            {" "}
             <img
               style={
                 isMobile
                   ? {
-                      display: 'flex',
+                      display: "flex",
                     }
                   : {}
               }
@@ -167,13 +169,14 @@ function ShowMore() {
 
         <a
           href={patientScreenUrl}
-          target={'_blank'}
+          target={"_blank"}
           style={{
-            display: 'inline-block',
+            display: "inline-block",
 
-            margin: '10px 20px 30px 20px',
-          }}>
-          Go to Patient Screen{' '}
+            margin: "10px 20px 30px 20px",
+          }}
+        >
+          Go to Patient Screen{" "}
         </a>
         <div></div>
         <img
@@ -184,7 +187,7 @@ function ShowMore() {
         />
 
         {/* LAST SECTION */}
-        <div style={{ marginTop: '40px' }}>
+        <div style={{ marginTop: "40px" }}>
           <h2>Additional Features Implemented:</h2>
           <ol>
             <li>
@@ -244,11 +247,9 @@ export default function Planify({ title }: { title: string }) {
 
   return (
     <>
-      <div
-        className="planify-main-container"
-      >
-        <h2 style={{ fontSize: '40px', margin: '0' }}>{title}</h2>
-        <p style={{ color: '#7f00e0', marginBottom: '3rem' }}>
+      <div className="planify-main-container">
+        <h2 style={{ fontSize: "40px", margin: "0" }}>{title}</h2>
+        <p style={{ color: "#7f00e0", marginBottom: "3rem" }}>
           An appointment Scheduling Platform
         </p>
 
@@ -257,17 +258,19 @@ export default function Planify({ title }: { title: string }) {
             onClick={handleOpenProjectUrl}
             className="planify-grid-left-section "
             style={{
-              cursor: 'pointer',
-            }}>
+              cursor: "pointer",
+            }}
+          >
             <img
               className="planify-project-img"
               src={mainImage}
-              alt={title + ' project image'}
+              alt={title + " project image"}
             />
           </div>
           <div
-            style={{ margin: '0 2rem' }}
-            className="planify-grid-right-section">
+            style={{ margin: "0 2rem" }}
+            className="planify-grid-right-section"
+          >
             {isMobile ? (
               <MobileTechStack technologies={techList} />
             ) : (
@@ -280,17 +283,19 @@ export default function Planify({ title }: { title: string }) {
         {isMobile ? (
           <div
             style={{
-              display: 'flex',
-              flexDirection: 'column',
-              marginTop: '3rem',
-              gap: '2rem',
-            }}>
+              display: "flex",
+              flexDirection: "column",
+              marginTop: "3rem",
+              gap: "2rem",
+            }}
+          >
             <div
               style={{
-                display: 'flex',
-                justifyContent: 'center',
-                gap: '7rem',
-              }}>
+                display: "flex",
+                justifyContent: "center",
+                gap: "7rem",
+              }}
+            >
               <FaGithub
                 className="icon"
                 onClick={handleGithubClick}
@@ -304,38 +309,41 @@ export default function Planify({ title }: { title: string }) {
             </div>
             <div
               className="show-more"
-              onClick={() => setShowInfo((prev) => !prev)}>
+              onClick={() => setShowInfo((prev) => !prev)}
+            >
               <ShowMoreButton
                 idToGlide="planify-show-more"
                 showInfo={showInfo}
               />
               <LiaAngleDoubleDownSolid
-                className={showInfo ? 'show-less-icon' : 'show-more-icon'}
+                className={showInfo ? "show-less-icon" : "show-more-icon"}
               />
             </div>
           </div>
         ) : (
           <div className="projects-buttons">
-            <div style={{ width: '164px' }} />
+            <div style={{ width: "164px" }} />
 
             <div
               className="show-more"
-              onClick={() => setShowInfo((prev) => !prev)}>
+              onClick={() => setShowInfo((prev) => !prev)}
+            >
               <ShowMoreButton
                 idToGlide="planify-show-more"
                 showInfo={showInfo}
               />
               <LiaAngleDoubleDownSolid
-                className={showInfo ? 'show-less-icon' : 'show-more-icon'}
+                className={showInfo ? "show-less-icon" : "show-more-icon"}
               />
             </div>
 
             <div
               style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                gap: '2rem',
-              }}>
+                display: "flex",
+                justifyContent: "space-between",
+                gap: "2rem",
+              }}
+            >
               <FaGithub
                 className="icon"
                 onClick={handleGithubClick}
@@ -346,7 +354,7 @@ export default function Planify({ title }: { title: string }) {
                 onClick={handleOpenProjectUrl}
                 size={40}
               />
-              <div style={{ width: '20px' }} />
+              <div style={{ width: "20px" }} />
             </div>
           </div>
         )}

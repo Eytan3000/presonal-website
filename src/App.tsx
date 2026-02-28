@@ -4,6 +4,7 @@ import Hero from './components/hero/Hero';
 import AboutMe from './components/aboutMe/AboutMe';
 import Planify from './components/projects/Planify/Planify';
 import DataSnapshot from './components/projects/DataSnapshot/DataSnapshot';
+import SportTimer from './components/projects/SportTimer/SportTimer';
 import Compound from './components/projects/Compound/Compound';
 import ChromeExtension from './components/projects/Chrome_Extension/ChromeExtension';
 import Contact from './components/contact/Contact';
@@ -70,6 +71,8 @@ function App() {
           title={'Things I’ve Built'}
           mt={9}
         />
+
+        <SportTimer title={'Sport Timer'} />
 
         <DataSnapshot title={'Data Snapshot'} />
 
