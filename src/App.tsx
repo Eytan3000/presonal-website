@@ -3,6 +3,7 @@ import MenuBar from './components/menuBar/MenuBar';
 import Hero from './components/hero/Hero';
 import AboutMe from './components/aboutMe/AboutMe';
 import Planify from './components/projects/Planify/Planify';
+import DataSnapshot from './components/projects/DataSnapshot/DataSnapshot';
 import Compound from './components/projects/Compound/Compound';
 import ChromeExtension from './components/projects/Chrome_Extension/ChromeExtension';
 import Contact from './components/contact/Contact';
@@ -69,6 +70,8 @@ function App() {
           title={'Things I’ve Built'}
           mt={9}
         />
+
+        <DataSnapshot title={'Data Snapshot'} />
 
         <Planify title={'Planify'} />
 
