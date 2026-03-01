@@ -14,7 +14,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "1",
     title: "Building Scalable React Applications",
-    excerpt: "Learn how to structure your React projects for scalability and maintainability, covering folder structure, state management, and performance optimization.",
+    excerpt:
+      "Learn how to structure your React projects for scalability and maintainability, covering folder structure, state management, and performance optimization.",
     content: `
       <h2>Introduction</h2>
       <p>Building scalable React applications requires a solid foundation. In this post, we'll explore key strategies for structuring your projects to handle growth and complexity.</p>
@@ -30,14 +31,16 @@ export const blogPosts: BlogPost[] = [
     `,
     date: "2023-10-15",
     author: "Eytan Krief",
-    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2070&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2070&auto=format&fit=crop",
     tags: ["React", "Architecture", "Performance"],
-    category: "Development"
+    category: "Development",
   },
   {
     id: "2",
     title: "The Future of Web Development with AI",
-    excerpt: "Explore how Artificial Intelligence is transforming the web development landscape, from code generation to personalized user experiences.",
+    excerpt:
+      "Explore how Artificial Intelligence is transforming the web development landscape, from code generation to personalized user experiences.",
     content: `
       <h2>AI in Web Development</h2>
       <p>Artificial Intelligence is no longer just a buzzword. It's actively changing how we build and interact with the web.</p>
@@ -53,14 +56,16 @@ export const blogPosts: BlogPost[] = [
     `,
     date: "2023-11-02",
     author: "Eytan Krief",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop",
     tags: ["AI", "Web Development", "Future Tech"],
-    category: "Technology"
+    category: "Technology",
   },
   {
     id: "3",
     title: "Mastering CSS Grid and Flexbox",
-    excerpt: "A comprehensive guide to understanding and using CSS Grid and Flexbox to create responsive and modern web layouts.",
+    excerpt:
+      "A comprehensive guide to understanding and using CSS Grid and Flexbox to create responsive and modern web layouts.",
     content: `
       <h2>CSS Layouts</h2>
       <p>CSS Grid and Flexbox are powerful tools for creating complex layouts. Understanding when to use each is key to mastering modern CSS.</p>
@@ -76,8 +81,9 @@ export const blogPosts: BlogPost[] = [
     `,
     date: "2023-11-20",
     author: "Eytan Krief",
-    image: "https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?q=80&w=2070&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?q=80&w=2070&auto=format&fit=crop",
     tags: ["CSS", "Design", "Frontend"],
-    category: "Design"
-  }
+    category: "Design",
+  },
 ];

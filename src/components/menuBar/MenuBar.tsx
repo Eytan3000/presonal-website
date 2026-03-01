@@ -1,14 +1,14 @@
-import { SetStateAction } from 'react';
-import { useMobile } from '../../Contexts/MobileProvider';
-import logo from '../../assets/KRIEF_Icon_RGB.png';
-import './menuBar.css';
-import { RxHamburgerMenu } from 'react-icons/rx';
-import { Link } from 'react-router-dom';
+import { SetStateAction } from "react";
+import { useMobile } from "../../Contexts/MobileProvider";
+import logo from "../../assets/KRIEF_Icon_RGB.png";
+import "./menuBar.css";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { Link } from "react-router-dom";
 
 function DesktopMenuBar() {
   return (
     <div className="menu-bar">
-      <Link to="/">
+      <Link to="/" style={{ display: "flex" }}>
         <img className="logo" src={logo} alt="" />
       </Link>
       <div className="menu-links-container">
