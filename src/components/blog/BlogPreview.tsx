@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { blogPosts } from '../../data/blogPosts';
 import BlogCard from './BlogCard';
 import './blog.css';
 import { IoArrowForward } from 'react-icons/io5';
+import { useBlogPosts } from './useBlogPosts';
 
 const BlogPreview: React.FC = () => {
-  // Get the latest 3 posts
-  const latestPosts = blogPosts.slice(0, 3);
+  const { posts: latestPosts, loading, error } = useBlogPosts(3);
 
   return (
     <div className="blog-preview-container">
@@ -24,6 +23,8 @@ const BlogPreview: React.FC = () => {
           <BlogCard key={post.id} post={post} />
         ))}
       </div>
+      {loading && latestPosts.length === 0 ? <p style={{ padding: '0 2rem' }}>Loading posts...</p> : null}
+      {error ? <p style={{ padding: '0 2rem' }}>Failed to load posts.</p> : null}
     </div>
   );
 };

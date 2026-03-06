@@ -1,20 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BlogPost } from '../../data/blogPosts';
+import { urlFor } from '../../sanity/client';
+import { BlogEntry } from './blogModel';
 import './blog.css';
 
 interface BlogCardProps {
-  post: BlogPost;
+  post: BlogEntry;
 }
 
 const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
   return (
-    <Link to={`/blog/${post.id}`} className="blog-card">
-      <img src={post.image} alt={post.title} className="blog-card-image" />
+    <Link to={`/blog/${post.slug}`} className="blog-card">
+      {post.image ? (
+        <img
+          src={urlFor(post.image).width(600).height(320).url()}
+          alt={post.title}
+          className="blog-card-image"
+        />
+      ) : null}
       <div className="blog-card-content">
         <div className="blog-card-meta">
           <span>{post.category}</span>
-          <span>{new Date(post.date).toLocaleDateString()}</span>
+          <span>{post.date ? new Date(post.date).toLocaleDateString() : ''}</span>
         </div>
         <h3 className="blog-card-title">{post.title}</h3>
         <p className="blog-card-excerpt">{post.excerpt}</p>
