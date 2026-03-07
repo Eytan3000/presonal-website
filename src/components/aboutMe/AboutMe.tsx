@@ -10,25 +10,12 @@ export default function AboutMe() {
         <div style={{ marginTop: "2rem" }} className="grid-container">
           <div className="left-section">
             <p style={{ fontSize: "20px" }}>
-              I come from a music and sound design background, and about two
-              years ago I started learning JavaScript. What started as a
-              curiosity-driven journey into coding has evolved into a deep love
-              for programming, fueling my passion for innovation and continuous
-              learning.
-              <br />
-              <b
-                style={{
-                  fontSize: "30px",
-                  display: "inline-block",
-                  marginTop: "6px",
-                }}
-              >
-                Today
-              </b>{" "}
-              I work for a company that provides a platform for the Ministry of
-              Education, solving real-world problems, and collaborating with a
-              real professional team. <br /> At the same time,{" "}
-              <b> I pursue personal projects </b>, constantly researching and
+              I work for a company that builds large-scale, data-driven
+              e-commerce platforms that help millions of consumers discover the
+              right products and make confident purchasing decisions. I
+              collaborate with a skilled professional team while solving
+              real-world problems at scale. <br /> At the same time,{" "}
+              <b>I pursue personal projects</b>, constantly researching and
               learning, deepening my understanding of the technologies within my
               stack, which includes:
             </p>
